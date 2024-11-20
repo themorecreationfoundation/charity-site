@@ -1,0 +1,176 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body and Container Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding-bottom: 0px; /* Adjust this value to match the footer's height */
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Fixed Video Banner Styling */
+.video-banner {
+    position: 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--video-banner-height);
+    overflow: hidden;
+    z-index: 10000;
+}
+
+.video-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.video-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.2em;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* Images with Amazon Button Styling */
+.images-with-amazon-button {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.images-with-amazon-button img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 200px;
+}
+
+.amazon-button-container {
+    position: relative;
+    margin-bottom: 0px; /* Adjust as needed */
+}
+
+/* Button Image Styles */
+.button-image {
+    position: relative; /* Use relative positioning */
+    width: auto;
+    height: auto;
+    max-width: 20%; /* Adjust the size as needed */
+    margin: 20px auto; /* Center buttons horizontally */
+    display: block;
+}
+/* Full-Width Images Styling */
+.full-width-images {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; /* Adjust spacing as needed */
+}
+.full-width-images img {
+    width: 100%; /* Images take full width of their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-bottom: 20px; /* Reduced margin-bottom to decrease space between images */
+}
+
+.vertical-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-images img {
+    width: 100%; /* Make images full-width */
+    height: auto;
+}
+
+/* Headings and Text */
+h1 {
+    color: #143154;
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+/* Footer Styling */
+.site-footer {
+    background-color: #143154;
+    color: #ffffff;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-item {
+    margin: 5px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-icon {
+    width: 50px; /* Controls icon size */
+    height: auto; /* Maintains aspect ratio */
+    margin-right: 10px;
+}
+
+/* Footer Email Link Styling */
+.footer-email-link {
+    color: #ffffff; /* Ensures the link text is white */
+    text-decoration: none; /* Removes the underline by default */
+}
+
+.footer-email-link:hover {
+    text-decoration: underline; /* Underlines the link on hover */
+}
+
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    .footer-icon {
+        width: 18px; /* Smaller size for mobile devices */
+    }
+}
+
+.button-image {
+    max-width: 50%; /* Increase button size on smaller screens */
+}
+/* New Button Styling */
+.new-donation-button-image {
+    width: auto;
+    height: auto;
+    max-width: 50%; /* Controls the default size */
+    margin: -20px auto; /* Centers the button horizontally with space around it */
+    display: block;
+}
