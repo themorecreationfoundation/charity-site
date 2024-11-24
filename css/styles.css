@@ -162,17 +162,8 @@ h1 {
 .paypal-button-container,
 .new-button-container {
     width: 100%;
-    margin: 0 auto 20px; /* Centers the container horizontally */
-    text-align: left; /* Align buttons to the left */
-}
-
-/* New Donation Button Styling */
-.new-donation-button-image {
-    width: auto;
-    height: auto;
-    max-width: 50%; /* Controls the default size */
-    margin: -20px auto; /* Centers the button horizontally with space around it */
-    display: block;
+    margin: 0 auto 20px;
+    text-align: left;
 }
 
 /* Additional Responsive Styling for Buttons */
