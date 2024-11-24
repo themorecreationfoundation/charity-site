@@ -153,8 +153,11 @@ h1 {
 /* Adjusted Button Image Styles */
 .button-image {
     display: block;
-    margin: 20px 0;
-    max-width: 20%; /* Adjust size as needed */
+    position: relative;
+    top: -20px;    /* Move up by 20px */
+    left: 30px;    /* Move right by 30px */
+    margin: 10px 0;
+    max-width: 20%;
 }
 
 /* Container Styling for Buttons */
