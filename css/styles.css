@@ -154,8 +154,8 @@ h1 {
 .button-image {
     display: block;
     position: relative;
-    top: -800px;    /* Move up by 20px */
-    left: 250px;    /* Move right by 30px */
+    top: -1000px;    /* Move up by 20px */
+    left: 550px;    /* Move right by 30px */
     margin: 10px 0;
     max-width: 20%;
 }
