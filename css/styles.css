@@ -154,7 +154,7 @@ h1 {
 .button-image {
     display: block;
     position: relative;
-    top: -100px;    /* Move up by 20px */
+    top: 100px;    /* Move up by 20px */
     left: 50px;    /* Move right by 30px */
     margin: 10px 0;
     max-width: 20%;
