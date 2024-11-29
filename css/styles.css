@@ -89,7 +89,7 @@ body {
     width: 100%; /* Images take full width of their container */
     height: auto; /* Maintain aspect ratio */
     display: block;
-    margin-bottom: -20px; /* Reduced margin-bottom to decrease space between images */
+    margin-bottom: -50px; /* Reduced margin-bottom to decrease space between images */
 }
 
 .vertical-images {
