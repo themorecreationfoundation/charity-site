@@ -62,27 +62,40 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
 }
 
-/* Amazon Button Container Styling */
 .amazon-button-container {
     position: relative;
     margin-bottom: 0px; /* Adjust as needed */
 }
 
+/* Button Image Styles */
+.button-image {
+    position: relative; /* Use relative positioning */
+    width: auto;
+    height: auto;
+    max-width: 20%; /* Adjust the size as needed */
+    margin: 20px auto; /* Center buttons horizontally */
+    display: block;
+}
 /* Full-Width Images Styling */
 .full-width-images {
     width: 100%;
     text-align: center;
     margin-bottom: 20px; /* Adjust spacing as needed */
 }
-
 .full-width-images img {
     width: 100%; /* Images take full width of their container */
     height: auto; /* Maintain aspect ratio */
     display: block;
     margin-bottom: 20px; /* Reduced margin-bottom to decrease space between images */
+}
+
+.vertical-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .vertical-images {
@@ -102,7 +115,6 @@ h1 {
     font-size: 2.5em;
     margin: 20px 0;
 }
-
 /* Footer Styling */
 .site-footer {
     background-color: #143154;
@@ -143,6 +155,7 @@ h1 {
     text-decoration: underline; /* Underlines the link on hover */
 }
 
+
 /* Responsive Styling */
 @media (max-width: 600px) {
     .footer-icon {
@@ -150,28 +163,14 @@ h1 {
     }
 }
 
-/* Adjusted Button Image Styles */
 .button-image {
+    max-width: 50%; /* Increase button size on smaller screens */
+}
+/* New Button Styling */
+.new-donation-button-image {
+    width: auto;
+    height: auto;
+    max-width: 50%; /* Controls the default size */
+    margin: -20px auto; /* Centers the button horizontally with space around it */
     display: block;
-    position: relative;
-    top: 100px;    /* Move up by 20px */
-    left: 50px;    /* Move right by 30px */
-    margin: 10px 0;
-    max-width: 20%;
-}
-
-/* Container Styling for Buttons */
-.amazon-button-container,
-.paypal-button-container,
-.new-button-container {
-    width: 100%;
-    margin: 0 auto 20px;
-    text-align: left;
-}
-
-/* Additional Responsive Styling for Buttons */
-@media (max-width: 600px) {
-    .button-image {
-        max-width: 50%; /* Increase button size on smaller screens */
-    }
 }
