@@ -2,7 +2,40 @@
 * {
     margin: 0;
     padding: 0;
+    /* Apply box-sizing to all elements */
+*, *::before, *::after {
     box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Adjusted logo for responsive scaling */
+.logo img {
+    height: auto;
+    max-width: 100%; /* Ensures the logo can shrink if needed */
+}
+
+.tagline h1 {
+    color: #0b2443;
+    font-family: 'Made Tommy', sans-serif;
+    margin: 0;
 }
 
 /* General Body and Container Styling */
