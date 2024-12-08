@@ -1,8 +1,10 @@
-/* Reset default browser styles */
-* {
+/* Reset default margins and paddings for body */
+body {
     margin: 0;
     padding: 0;
-    /* Apply box-sizing to all elements */
+}
+
+/* Apply box-sizing to all elements */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -33,178 +35,310 @@
 }
 
 .tagline h1 {
-    color: #0b2443;
-    font-family: 'Made Tommy', sans-serif;
+    color: #000;
+    font-family: 'Futura', sans-serif;
     margin: 0;
 }
 
-/* General Body and Container Styling */
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
+/* Introduction Video */
+.intro-video {
+    position: relative;
     margin: 0;
-    padding-bottom: 0px; /* Adjust this value to match the footer's height */
+    padding: 0 0 1px 0;
+    margin-top: 124px; /* Offset for fixed navbar */
+    line-height: 0;
 }
 
-.container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Fixed Video Banner Styling */
-.video-banner {
-    position: 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--video-banner-height);
-    overflow: hidden;
-    z-index: 10000;
-}
-
-.video-banner video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-}
-
-.video-text {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-size: 1.2em;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 1;
-}
-
-/* Images with Amazon Button Styling */
-.images-with-amazon-button {
-    width: 100%;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.images-with-amazon-button img {
+.intro-video video {
     width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 150px;
+    margin: 0;
+    padding: 0;
 }
 
-/* Amazon Button Container Styling */
-.amazon-button-container {
+/* Image Slider */
+.image-slider {
     position: relative;
-    margin-bottom: 0px; /* Adjust as needed */
-}
-
-/* Full-Width Images Styling */
-.full-width-images {
+    overflow: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.slider-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ensure no horizontal scroll */
+}
+
+.slider {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 1s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    width: 100%; /* Ensure each slide is exactly 100% of viewport width */
+    flex-shrink: 0;
+    height: auto;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block; /* Remove any inline spacing issues */
+}
+
+/* Control Buttons */
+.control-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 2em;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn, .next-btn, .pause-play-btn {
+    width: 50px;
+    height: 50px;
+}
+
+/* Individual Button Positions */
+.prev-btn {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.next-btn {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.pause-play-btn {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+}
+
+/* Hover Effects */
+.control-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Contact Us Form */
+.contact-form {
+    background-color: #fff;
+    padding: 40px 0;
+    color: #000;
+    font-family: 'Futura', sans-serif;
     text-align: center;
-    margin-bottom: 20px; /* Adjust spacing as needed */
 }
 
-.full-width-images img {
-    width: 100%; /* Images take full width of their container */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    margin-bottom: 20px; /* Reduced margin-bottom to decrease space between images */
+.contact-form h2 {
+    color: #000;
+    margin-bottom: 20px;
 }
 
-.vertical-images {
+.contact-input {
+    color: #000;
+}
+
+/* Placeholder text styles */
+.contact-input::placeholder {
+    color: #000;
+}
+.contact-input::-webkit-input-placeholder {
+    color: #000;
+}
+.contact-input:-ms-input-placeholder {
+    color: #000;
+}
+.contact-input::-ms-input-placeholder {
+    color: #000;
+}
+
+.contact-form .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact-form form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.vertical-images img {
-    width: 100%; /* Make images full-width */
-    height: auto;
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff7800;
 }
 
-/* Headings and Text */
-h1 {
-    color: #143154;
-    font-size: 2.5em;
-    margin: 20px 0;
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff7800;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Footer Styling */
+.contact-form button:hover {
+    background-color: #e66a00;
+}
+
+/* Footer */
 .site-footer {
-    background-color: #143154;
-    color: #ffffff;
-    width: 100%;
-    padding: 60px 0;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Futura', sans-serif;
+    padding: 20px 0;
 }
 
-.footer-content {
-    max-width: 1200px;
+.site-footer .container {
+    width: 90%;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
-.footer-item {
-    margin: 5px 15px;
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
-.footer-icon {
-    width: 50px; /* Controls icon size */
-    height: auto; /* Maintains aspect ratio */
-    margin-right: 10px;
+.site-footer li {
+    margin: 0 10px;
 }
 
-/* Footer Email Link Styling */
-.footer-email-link {
-    color: #ffffff; /* Ensures the link text is white */
-    text-decoration: none; /* Removes the underline by default */
+.site-footer a {
+    color: #000;
+    text-decoration: none;
 }
 
-.footer-email-link:hover {
-    text-decoration: underline; /* Underlines the link on hover */
+.site-footer a:hover {
+    text-decoration: underline;
 }
 
-/* Responsive Styling */
-@media (max-width: 600px) {
-    .footer-icon {
-        width: 18px; /* Smaller size for mobile devices */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: center; /* Center elements vertically on small screens */
+        text-align: center; /* Center tagline under the logo */
+    }
+
+    .logo img {
+        max-width: 60%; /* Scale down the logo on smaller screens */
+    }
+
+    .tagline h1 {
+        margin-top: 5px;
+        text-align: center;
+        font-size: 1.2rem; /* Reduce tagline font size for smaller screens */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+    }
+
+    /* Ensuring the slider maintains full-width single images on mobile */
+    .slider {
+        width: 100%;
+    }
+
+    .slide {
+        width: 100%;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 }
 
-/* Adjusted Button Image Styles */
-.button-image {
-    display: block;
-    position: relative;
-    top: 1000px;    /* Move up by 20px */
-    left: 50px;    /* Move right by 30px */
-    margin: 10px 0;
-    max-width: 20%;
+/* Further adjustments for very small screens */
+@media (max-width: 375px) {
+    .logo img {
+        max-width: 50%; /* Even smaller for very narrow screens */
+    }
+
+    .tagline h1 {
+        font-size: 1rem; /* Adjust tagline size to ensure it fits nicely */
+    }
 }
 
-/* Container Styling for Buttons */
-.amazon-button-container,
-.paypal-button-container,
-.new-button-container {
-    width: 100%;
-    margin: 0 auto 20px;
-    text-align: left;
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent overlay */
 }
 
-/* Additional Responsive Styling for Buttons */
-@media (max-width: 600px) {
-    .button-image {
-        max-width: 50%; /* Increase button size on smaller screens */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 90%;
+    width: 600px; /* Adjust as needed */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-family: 'Futura', sans-serif;
+}
+
+.close-btn {
+    color: #000;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.close-btn:hover {
+    color: #e66a00;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; 
+        margin-top: 30%;
+    }
+}
+
+/* Add this rule to ensure the unmute button is visible on iPad landscape */
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+    .intro-video {
+        margin-top: 160px; /* Increase top margin so the unmute button is not hidden */
     }
 }
