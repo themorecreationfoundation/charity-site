@@ -174,7 +174,7 @@ body {
     border-radius: 5px;
     background-color: #0b2443;
     color: #fff; /* Ensure entered text is white */
-    height: 150px; /* Adjust this value as desired */
+    height: 250px; /* Adjust this value as desired */
 }
 
 /* Ensure placeholder text is also white */
