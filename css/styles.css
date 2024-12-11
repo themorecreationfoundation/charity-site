@@ -143,32 +143,13 @@ body {
 .contact-form {
     background-color: #fff;
     padding: 40px 0;
-    color: #fff;
     font-family: 'MADE TOMMY', sans-serif;
     text-align: center;
 }
 
 .contact-form h2 {
-    color: #fff;
+    color: #0b2443;
     margin-bottom: 20px;
-}
-
-.contact-input {
-    color: #fff;
-}
-
-/* Placeholder text styles */
-.contact-input::placeholder {
-    color: #fff; /* Change placeholder text color to white */
-}
-.contact-input::-webkit-input-placeholder {
-    color: #fff; /* Change placeholder text color to white */
-}
-.contact-input:-ms-input-placeholder {
-    color: #fff; /* Change placeholder text color to white */
-}
-.contact-input::-ms-input-placeholder {
-    color: #fff; /* Change placeholder text color to white */
 }
 
 .contact-form .container {
@@ -182,6 +163,7 @@ body {
     align-items: center;
 }
 
+/* Ensuring all inputs and the textarea have white text */
 .contact-form input,
 .contact-form textarea {
     width: 80%;
@@ -191,6 +173,25 @@ body {
     border: none;
     border-radius: 5px;
     background-color: #0b2443;
+    color: #fff; /* Ensure entered text is white */
+}
+
+/* Ensure placeholder text is also white */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #fff;
+}
+.contact-form input::-webkit-input-placeholder,
+.contact-form textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+.contact-form input:-ms-input-placeholder,
+.contact-form textarea:-ms-input-placeholder {
+    color: #fff; 
+}
+.contact-form input::-ms-input-placeholder,
+.contact-form textarea::-ms-input-placeholder {
+    color: #fff; 
 }
 
 .contact-form button {
