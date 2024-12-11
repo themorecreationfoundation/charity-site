@@ -71,7 +71,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Ensure no horizontal scroll */
+    overflow: hidden;
 }
 
 .slider {
@@ -82,7 +82,7 @@ body {
 }
 
 .slide {
-    width: 100%; /* Each slide is 100% of viewport width */
+    width: 100%;
     flex-shrink: 0;
     height: auto;
 }
@@ -163,11 +163,9 @@ body {
     align-items: center;
 }
 
-/* Let the inputs and textarea use the full available width within the container */
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    max-width: 500px;
+    width: 100%; /* Fill the container width */
     padding: 10px;
     margin-bottom: 15px;
     border: none;
@@ -214,18 +212,19 @@ body {
 /* Three-Column Section */
 .contact-and-support {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    align-items: flex-start; /* Align headings at top on desktop */
     justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px; /* A fixed max-width to prevent columns from being too spread out on large screens */
+    max-width: 1200px;
     width: 90%;
     margin: 40px auto;
     gap: 20px;
+    text-align: center;
 }
 
 .contact-and-support > div {
-    flex: 1 1 30%; /* On larger screens, roughly three equal columns */
-    min-width: 250px; /* Ensure columns don't get too narrow on moderate screens */
+    flex: 1;
+    min-width: 250px;
 }
 
 .contact-and-support h2 {
@@ -242,7 +241,7 @@ body {
 }
 
 .contact-form-section {
-    /* No additional restrictions to keep the form comfortable */
+    /* No additional restrictions */
 }
 
 /* Footer */
@@ -251,14 +250,41 @@ body {
     color: #000;
     font-family: 'MADE TOMMY', sans-serif;
     padding: 20px 0;
-    text-align: center; /* Ensure footer text is centred */
+    text-align: center;
     width: 90%;
-    margin: 20px auto; /* Some extra spacing above footer */
+    margin: 20px auto;
+}
+
+/* Remove underlines, bullets, and dots from links and text */
+.site-footer a {
+    text-decoration: none;
+    color: #000;
+}
+
+.site-footer a:hover {
+    text-decoration: none;
+}
+
+/* If previously using lists, ensure they do not show bullets */
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer li {
+    display: inline;
+    margin: 0 10px;
+}
+
+/* Ensure no underline on Registered Charity Number if it was a link before */
+.footer-email-link {
+    text-decoration: none;
+    color: #000;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    /* Stack sections vertically on smaller screens */
     .contact-and-support > div {
         flex: 1 1 100%;
         max-width: 100%;
@@ -283,7 +309,6 @@ body {
     .contact-form input,
     .contact-form textarea {
         width: 100%;
-        max-width: 100%; /* Fill the container fully on mobile */
     }
 
     .slider {
@@ -297,7 +322,6 @@ body {
     .slide img {
         width: 100%;
         height: auto;
-        object-fit: cover;
     }
 }
 
