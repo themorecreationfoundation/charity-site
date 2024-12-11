@@ -163,11 +163,10 @@ body {
     align-items: center;
 }
 
-/* Maintain original width and styling for inputs and textarea */
 .contact-form input,
 .contact-form textarea {
     width: 80%;
-    max-width: 500px; /* Original max-width for comfortable reading */
+    max-width: 500px; /* Preserve original comfortable width */
     padding: 10px;
     margin-bottom: 15px;
     border: none;
@@ -215,8 +214,8 @@ body {
 .contact-and-support {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start; /* Ensure headings align at top */
-    justify-content: space-between;
+    justify-content: center; /* Center columns horizontally on larger screens */
+    align-items: flex-start; 
     max-width: 1200px;
     width: 90%;
     margin: 40px auto;
@@ -224,22 +223,19 @@ body {
     text-align: center;
 }
 
-/* Each section allowed to size naturally. */
-.contact-and-support > div {
-    flex: 0 0 auto;
-    /* No fixed min-width forcing columns too wide */
+/* Keep headings consistent with site style */
+.contact-and-support h2 {
+    color: #0b2443;
+    font-family: 'MADE TOMMY', sans-serif;
+    margin-bottom: 20px;
 }
 
-/* Reduce button sizes so they don't push layout too wide */
+/* Constrain button sizes to free up space for the form */
 .button-image {
     display: block;
     margin: 10px auto;
-    max-width: 200px; /* Smaller buttons */
+    max-width: 200px;
     height: auto;
-}
-
-.contact-form-section {
-    /* No additional restrictions, ensures form can remain at original width */
 }
 
 /* Footer */
@@ -274,7 +270,7 @@ body {
     margin: 0 10px;
 }
 
-/* Make sure the Registered Charity Number is not underlined or styled as a link */
+/* Ensure charity number is not underlined or styled as a link */
 .footer-email-link {
     text-decoration: none;
     color: #000;
@@ -304,10 +300,11 @@ body {
         font-size: 1.2rem;
     }
 
+    /* Maintain original form width rules; no overrides */
     .contact-form input,
     .contact-form textarea {
-        width: 100%;
-        max-width: 100%; /* On mobile, fill container width */
+        width: 80%; /* Still 80% of container, max 500px if space allows */
+        max-width: 500px; 
     }
 
     .slider {
