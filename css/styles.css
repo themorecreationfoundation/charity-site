@@ -159,16 +159,16 @@ body {
 
 /* Placeholder text styles */
 .contact-input::placeholder {
-    color: #000;
+    color: #fff; /* Change placeholder text color to white */
 }
 .contact-input::-webkit-input-placeholder {
-    color: #000;
+    color: #fff; /* Change placeholder text color to white */
 }
 .contact-input:-ms-input-placeholder {
-    color: #000;
+    color: #fff; /* Change placeholder text color to white */
 }
 .contact-input::-ms-input-placeholder {
-    color: #000;
+    color: #fff; /* Change placeholder text color to white */
 }
 
 .contact-form .container {
@@ -197,7 +197,7 @@ body {
     padding: 10px 20px;
     border: none;
     background-color: #0b2443;
-    color: #000;
+    color: #fff;
     border-radius: 5px;
     cursor: pointer;
 }
