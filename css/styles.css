@@ -31,7 +31,7 @@ body {
 /* Adjusted logo for responsive scaling */
 .logo img {
     height: auto;
-    max-width: 100%; /* Ensures the logo can shrink if needed */
+    max-width: 100%;
 }
 
 .tagline h2 {
@@ -82,7 +82,7 @@ body {
 }
 
 .slide {
-    width: 100%; /* Ensure each slide is exactly 100% of viewport width */
+    width: 100%; /* Each slide is 100% of viewport width */
     flex-shrink: 0;
     height: auto;
 }
@@ -91,7 +91,7 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
-    display: block; /* Remove any inline spacing issues */
+    display: block;
 }
 
 /* Control Buttons */
@@ -183,7 +183,7 @@ body {
     border-radius: 5px;
     background-color: #0b2443;
     color: #fff;
-    height: 150px; /* Adjust this value as desired */
+    height: 150px;
 }
 
 /* Ensure placeholder text is also white */
@@ -217,7 +217,7 @@ body {
     background-color: #e66a00;
 }
 
-/* Insert the new code for contact-and-support and related classes here */
+/* Three-Column Section (Desktop) and Stacked (Mobile) */
 .contact-and-support {
     display: flex;
     justify-content: space-between;
@@ -227,9 +227,9 @@ body {
     gap: 20px;
 }
 
+/* Remove restrictive max-width to preserve contact form original width */
 .contact-and-support > div {
-    flex: 1;
-    max-width: 300px; /* Adjust as desired */
+    /* No max-width here, allowing sections to size naturally */
 }
 
 .contact-and-support h2 {
@@ -246,7 +246,7 @@ body {
 }
 
 .contact-form-section {
-    /* Optional: Add any additional styles for the contact-form-section if needed */
+    /* No additional restrictions here */
 }
 
 /* Footer */
@@ -255,51 +255,33 @@ body {
     color: #000;
     font-family: 'MADE TOMMY', sans-serif;
     padding: 20px 0;
-}
-
-.site-footer .container {
+    text-align: center; /* Ensure footer text is centred */
     width: 90%;
     margin: 0 auto;
-    text-align: center;
-}
-
-.site-footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    display: flex;
-    justify-content: center;
-}
-
-.site-footer li {
-    margin: 0 10px;
-}
-
-.site-footer a {
-    color: #000;
-    text-decoration: none;
-}
-
-.site-footer a:hover {
-    text-decoration: underline;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    /* Stack sections vertically on smaller screens */
+    .contact-and-support {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .navbar .container {
         flex-direction: column;
-        align-items: center; /* Center elements vertically on small screens */
-        text-align: center; /* Center tagline under the logo */
+        align-items: center;
+        text-align: center; 
     }
 
     .logo img {
-        max-width: 60%; /* Scale down the logo on smaller screens */
+        max-width: 60%;
     }
 
     .tagline h1 {
         margin-top: 5px;
         text-align: center;
-        font-size: 1.2rem; /* Reduce tagline font size for smaller screens */
+        font-size: 1.2rem;
     }
 
     .contact-form input,
@@ -307,7 +289,7 @@ body {
         width: 100%;
     }
 
-    /* Ensuring the slider maintains full-width single images on mobile */
+    /* Slider remains full-width on mobile */
     .slider {
         width: 100%;
     }
@@ -326,17 +308,17 @@ body {
 /* Further adjustments for very small screens */
 @media (max-width: 375px) {
     .logo img {
-        max-width: 50%; /* Even smaller for very narrow screens */
+        max-width: 50%;
     }
 
     .tagline h1 {
-        font-size: 1rem; /* Adjust tagline size to ensure it fits nicely */
+        font-size: 1rem;
     }
 }
 
 /* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed; 
     z-index: 2000; 
     left: 0;
@@ -344,7 +326,7 @@ body {
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent overlay */
+    background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
@@ -353,7 +335,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     max-width: 90%;
-    width: 600px; /* Adjust as needed */
+    width: 600px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-family: 'Futura', sans-serif;
 }
@@ -371,7 +353,7 @@ body {
     color: #e66a00;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Modals */
 @media (max-width: 768px) {
     .modal-content {
         width: 90%; 
@@ -379,9 +361,9 @@ body {
     }
 }
 
-/* Add this rule to ensure the unmute button is visible on iPad landscape */
+/* iPad landscape adjustments */
 @media screen and (min-width: 1024px) and (orientation: landscape) {
     .intro-video {
-        margin-top: 160px; /* Increase top margin so the unmute button is not hidden */
+        margin-top: 160px;
     }
 }
