@@ -143,13 +143,13 @@ body {
 .contact-form {
     background-color: #fff;
     padding: 40px 0;
-    color: #000;
+    color: #fff;
     font-family: 'MADE TOMMY', sans-serif;
     text-align: center;
 }
 
 .contact-form h2 {
-    color: #000;
+    color: #fff;
     margin-bottom: 20px;
 }
 
