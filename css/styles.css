@@ -163,9 +163,11 @@ body {
     align-items: center;
 }
 
+/* Maintain original width and styling for inputs and textarea */
 .contact-form input,
 .contact-form textarea {
-    width: 100%; /* Fill the container width */
+    width: 80%;
+    max-width: 500px; /* Original max-width for comfortable reading */
     padding: 10px;
     margin-bottom: 15px;
     border: none;
@@ -212,8 +214,8 @@ body {
 /* Three-Column Section */
 .contact-and-support {
     display: flex;
-    flex-wrap: wrap; /* Wrap on smaller screens */
-    align-items: flex-start; /* Align headings at top on desktop */
+    flex-wrap: wrap;
+    align-items: flex-start; /* Ensure headings align at top */
     justify-content: space-between;
     max-width: 1200px;
     width: 90%;
@@ -222,26 +224,22 @@ body {
     text-align: center;
 }
 
+/* Each section allowed to size naturally. */
 .contact-and-support > div {
-    flex: 1;
-    min-width: 250px;
+    flex: 0 0 auto;
+    /* No fixed min-width forcing columns too wide */
 }
 
-.contact-and-support h2 {
-    font-family: 'MADE TOMMY', sans-serif;
-    color: #0b2443;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
+/* Reduce button sizes so they don't push layout too wide */
 .button-image {
     display: block;
     margin: 10px auto;
-    max-width: 100%;
+    max-width: 200px; /* Smaller buttons */
+    height: auto;
 }
 
 .contact-form-section {
-    /* No additional restrictions */
+    /* No additional restrictions, ensures form can remain at original width */
 }
 
 /* Footer */
@@ -255,7 +253,7 @@ body {
     margin: 20px auto;
 }
 
-/* Remove underlines, bullets, and dots from links and text */
+/* Remove underlines and extra formatting from footer links */
 .site-footer a {
     text-decoration: none;
     color: #000;
@@ -265,7 +263,6 @@ body {
     text-decoration: none;
 }
 
-/* If previously using lists, ensure they do not show bullets */
 .site-footer ul {
     list-style: none;
     padding: 0;
@@ -277,7 +274,7 @@ body {
     margin: 0 10px;
 }
 
-/* Ensure no underline on Registered Charity Number if it was a link before */
+/* Make sure the Registered Charity Number is not underlined or styled as a link */
 .footer-email-link {
     text-decoration: none;
     color: #000;
@@ -285,6 +282,7 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    /* Stack sections vertically on smaller screens */
     .contact-and-support > div {
         flex: 1 1 100%;
         max-width: 100%;
@@ -309,6 +307,7 @@ body {
     .contact-form input,
     .contact-form textarea {
         width: 100%;
+        max-width: 100%; /* On mobile, fill container width */
     }
 
     .slider {
