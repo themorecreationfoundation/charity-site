@@ -163,8 +163,10 @@ body {
     align-items: center;
 }
 
-.contact-form input {
-    width: 80%;
+/* Let the inputs and textarea use the full available width within the container */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
     max-width: 500px;
     padding: 10px;
     margin-bottom: 15px;
@@ -175,18 +177,10 @@ body {
 }
 
 .contact-form textarea {
-    width: 80%;
-    max-width: 500px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0b2443;
-    color: #fff;
     height: 150px;
 }
 
-/* Ensure placeholder text is also white */
+/* Placeholder text white */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: #fff;
@@ -217,19 +211,21 @@ body {
     background-color: #e66a00;
 }
 
-/* Three-Column Section (Desktop) and Stacked (Mobile) */
+/* Three-Column Section */
 .contact-and-support {
     display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     justify-content: space-between;
     align-items: flex-start;
+    max-width: 1200px; /* A fixed max-width to prevent columns from being too spread out on large screens */
     width: 90%;
     margin: 40px auto;
     gap: 20px;
 }
 
-/* Remove restrictive max-width to preserve contact form original width */
 .contact-and-support > div {
-    /* No max-width here, allowing sections to size naturally */
+    flex: 1 1 30%; /* On larger screens, roughly three equal columns */
+    min-width: 250px; /* Ensure columns don't get too narrow on moderate screens */
 }
 
 .contact-and-support h2 {
@@ -246,7 +242,7 @@ body {
 }
 
 .contact-form-section {
-    /* No additional restrictions here */
+    /* No additional restrictions to keep the form comfortable */
 }
 
 /* Footer */
@@ -257,15 +253,15 @@ body {
     padding: 20px 0;
     text-align: center; /* Ensure footer text is centred */
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto; /* Some extra spacing above footer */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     /* Stack sections vertically on smaller screens */
-    .contact-and-support {
-        flex-direction: column;
-        align-items: center;
+    .contact-and-support > div {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     .navbar .container {
@@ -287,9 +283,9 @@ body {
     .contact-form input,
     .contact-form textarea {
         width: 100%;
+        max-width: 100%; /* Fill the container fully on mobile */
     }
 
-    /* Slider remains full-width on mobile */
     .slider {
         width: 100%;
     }
