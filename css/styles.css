@@ -34,7 +34,7 @@ body {
     max-width: 100%; /* Ensures the logo can shrink if needed */
 }
 
-.tagline h1 {
+.tagline h2 {
     color: #0b2443;
     font-family: 'MADE TOMMY', sans-serif;
     margin: 0;
@@ -144,7 +144,7 @@ body {
     background-color: #fff;
     padding: 40px 0;
     color: #000;
-    font-family: 'Futura', sans-serif;
+    font-family: 'MADE TOMMY', sans-serif;
     text-align: center;
 }
 
@@ -154,7 +154,7 @@ body {
 }
 
 .contact-input {
-    color: #000;
+    color: #fff;
 }
 
 /* Placeholder text styles */
