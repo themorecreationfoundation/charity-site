@@ -225,8 +225,8 @@ body {
     max-width: 1200px;
     width: 90%;
     margin: 40px auto;
-    gap: 40px;
-    text-align: left;
+    gap: 100px;
+    text-align: center;
 }
 
 /* Optional: Give each direct child a flexible, consistent width */
