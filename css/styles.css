@@ -31,7 +31,7 @@ body {
 /* Adjusted logo for responsive scaling */
 .logo img {
     height: auto;
-    max-width: 100%;
+    max-width: 100%; /* Ensures the logo can shrink if needed */
 }
 
 .tagline h2 {
@@ -71,7 +71,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; /* Ensure no horizontal scroll */
 }
 
 .slider {
@@ -82,7 +82,7 @@ body {
 }
 
 .slide {
-    width: 100%;
+    width: 100%; /* Ensure each slide is exactly 100% of viewport width */
     flex-shrink: 0;
     height: auto;
 }
@@ -91,7 +91,7 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
-    display: block;
+    display: block; /* Remove any inline spacing issues */
 }
 
 /* Control Buttons */
@@ -163,29 +163,31 @@ body {
     align-items: center;
 }
 
-/* Increase input width and remove max-width for a wider form */
-.contact-form input {
-    width: 90%; /* Increased width for more space */
+/* Ensuring all inputs and the textarea have white text */
+.contact-form input  {
+    width: 80%;
+    max-width: 500px;
     padding: 10px;
     margin-bottom: 15px;
     border: none;
     border-radius: 5px;
     background-color: #0b2443;
     color: #fff;
+    /* No height specified, so they stay the original size */
 }
-
 .contact-form textarea {
-    width: 90%; /* Increased width for more space */
+    width: 80%;
+    max-width: 500px;
     padding: 10px;
     margin-bottom: 15px;
     border: none;
     border-radius: 5px;
     background-color: #0b2443;
-    color: #fff;
-    height: 150px;
+    color: #fff; /* Ensure entered text is white */
+    height: 150px; /* Adjust this value as desired */
 }
 
-/* Placeholder text white */
+/* Ensure placeholder text is also white */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: #fff;
@@ -216,100 +218,65 @@ body {
     background-color: #e66a00;
 }
 
-/* Three-Column Section */
-.contact-and-support {
-    display: flex;
-    flex-wrap: wrap;
-    /* Adjust justify-content to flex-start to align columns to the left */
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    max-width: 1200px;
-    width: 90%;
-    margin: 40px auto;
-    /* Increase gap for more space between columns */
-    gap: 40px;
-    text-align: left; /* Left-align text so headings line up properly */
-}
-
-.contact-and-support h2 {
-    color: #0b2443;
-    font-family: 'MADE TOMMY', sans-serif;
-    margin-bottom: 20px;
-    text-align: left; /* Ensure headings are left-aligned */
-}
-
-/* Constrain button sizes to free up space for the form */
-.button-image {
-    display: block;
-    margin: 10px auto;
-    max-width: 200px;
-    height: auto;
-}
-
 /* Footer */
 .site-footer {
     background-color: #fff;
     color: #000;
     font-family: 'MADE TOMMY', sans-serif;
     padding: 20px 0;
-    text-align: center;
+}
+
+.site-footer .container {
     width: 90%;
-    margin: 20px auto;
-}
-
-.site-footer a {
-    text-decoration: none;
-    color: #000;
-}
-
-.site-footer a:hover {
-    text-decoration: none;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .site-footer ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
 }
 
 .site-footer li {
-    display: inline;
     margin: 0 10px;
 }
 
-.footer-email-link {
-    text-decoration: none;
+.site-footer a {
     color: #000;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .contact-and-support > div {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
     .navbar .container {
         flex-direction: column;
-        align-items: center;
-        text-align: center; 
+        align-items: center; /* Center elements vertically on small screens */
+        text-align: center; /* Center tagline under the logo */
     }
 
     .logo img {
-        max-width: 60%;
+        max-width: 60%; /* Scale down the logo on smaller screens */
     }
 
     .tagline h1 {
         margin-top: 5px;
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Reduce tagline font size for smaller screens */
     }
 
     .contact-form input,
     .contact-form textarea {
-        width: 80%;
+        width: 100%;
     }
 
+    /* Ensuring the slider maintains full-width single images on mobile */
     .slider {
         width: 100%;
     }
@@ -321,23 +288,24 @@ body {
     .slide img {
         width: 100%;
         height: auto;
+        object-fit: cover;
     }
 }
 
 /* Further adjustments for very small screens */
 @media (max-width: 375px) {
     .logo img {
-        max-width: 50%;
+        max-width: 50%; /* Even smaller for very narrow screens */
     }
 
     .tagline h1 {
-        font-size: 1rem;
+        font-size: 1rem; /* Adjust tagline size to ensure it fits nicely */
     }
 }
 
 /* Modal Styles */
 .modal {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed; 
     z-index: 2000; 
     left: 0;
@@ -345,7 +313,7 @@ body {
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent overlay */
 }
 
 .modal-content {
@@ -354,7 +322,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     max-width: 90%;
-    width: 600px;
+    width: 600px; /* Adjust as needed */
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-family: 'Futura', sans-serif;
 }
@@ -372,7 +340,7 @@ body {
     color: #e66a00;
 }
 
-/* Responsive Adjustments for Modals */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .modal-content {
         width: 90%; 
@@ -380,9 +348,9 @@ body {
     }
 }
 
-/* iPad landscape adjustments */
+/* Add this rule to ensure the unmute button is visible on iPad landscape */
 @media screen and (min-width: 1024px) and (orientation: landscape) {
     .intro-video {
-        margin-top: 160px;
+        margin-top: 160px; /* Increase top margin so the unmute button is not hidden */
     }
 }
