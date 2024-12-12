@@ -142,7 +142,7 @@ body {
 /* Contact Us Form */
 .contact-form {
     background-color: #fff;
-    padding: 40px 0;
+    padding: 200px 0;
     font-family: 'MADE TOMMY', sans-serif;
     text-align: center;
 }
@@ -165,8 +165,8 @@ body {
 
 /* Increase input width and remove max-width for a wider form */
 .contact-form input {
-    width: 90%; /* Increased width for more space */
-    padding: 10px;
+    width: 100%; /* Increased width for more space */
+    padding: 100px;
     margin-bottom: 15px;
     border: none;
     border-radius: 5px;
@@ -175,8 +175,8 @@ body {
 }
 
 .contact-form textarea {
-    width: 90%; /* Increased width for more space */
-    padding: 10px;
+    width: 100%; /* Increased width for more space */
+    padding: 100px;
     margin-bottom: 15px;
     border: none;
     border-radius: 5px;
@@ -224,8 +224,8 @@ body {
     align-items: flex-start;
     max-width: 1200px;
     width: 90%;
-    margin: 40px auto;
-    gap: 100px;
+    margin: 100px auto;
+    gap: 200px;
     text-align: center;
 }
 
