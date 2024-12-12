@@ -163,20 +163,28 @@ body {
     align-items: center;
 }
 
-.contact-form input,
-.contact-form textarea {
+/* Ensuring all inputs and the textarea have white text */
+.contact-form input  {
     width: 80%;
-    max-width: 500px; /* Preserve original comfortable width */
+    max-width: 500px;
     padding: 10px;
     margin-bottom: 15px;
     border: none;
     border-radius: 5px;
     background-color: #0b2443;
     color: #fff;
+    /* No height specified, so they stay the original size */
 }
-
 .contact-form textarea {
-    height: 150px;
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0b2443;
+    color: #fff; /* Ensure entered text is white */
+    height: 150px; /* Adjust this value as desired */
 }
 
 /* Placeholder text white */
