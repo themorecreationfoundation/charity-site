@@ -340,6 +340,22 @@ body {
     color: #e66a00;
 }
 
+.divider-section {
+    background-color: #9fb9c5;
+    padding: 40px 0;
+}
+
+.donation-section h2 {
+    color: #0b2443; /* Adjust text colour as desired */
+}
+
+/* Adjust images as needed */
+.button-image {
+    display: inline-block;
+    margin: 10px;
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .modal-content {
