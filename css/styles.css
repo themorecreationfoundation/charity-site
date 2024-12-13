@@ -366,6 +366,11 @@ body {
     margin: 10px;
 }
 
+.about-us-section h2 {
+    color: #fff; /* Make headings stand out */
+   font-family: 'MADE TOMMY', sans-serif;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .modal-content {
