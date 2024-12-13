@@ -9,6 +9,13 @@ body {
     box-sizing: border-box;
 }
 
+/* Remove default heading and paragraph margins to minimise gaps */
+h1, h2, h3, p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
 /* Navigation Bar */
 .navbar {
     position: fixed;
@@ -28,13 +35,13 @@ body {
     margin: 0 auto;
 }
 
-/* Adjusted logo for responsive scaling */
 .logo img {
     height: auto;
-    max-width: 100%; /* Ensures the logo can shrink if needed */
+    max-width: 100%;
 }
 
-.tagline h2 {
+/* Adjust tagline styling if needed */
+.tagline h1 {
     color: #0b2443;
     font-family: 'MADE TOMMY', sans-serif;
     margin: 0;
@@ -44,7 +51,7 @@ body {
 .intro-video {
     position: relative;
     margin: 0;
-    padding: 0 0 1px 0;
+    padding: 0;
     margin-top: 124px; /* Offset for fixed navbar */
     line-height: 0;
 }
@@ -60,44 +67,29 @@ body {
 /* Divider Section */
 .divider-section {
     background-color: #0b2443; /* Dark blue background */
-    padding: 40px 0; /* Uniform padding for all divider sections */
-    text-align: center; /* Center-align content */
-    color: #ffffff; /* White text */
-    font-family: 'MADE TOMMY', sans-serif; /* Consistent font style */
-}
-
-.divider-section h2 {
-    font-size: 1.8rem; /* Adjust heading size */
-    margin-bottom: 20px; /* Space below heading */
-}
-
-.divider-section p {
-    font-size: 1.2rem; /* Paragraph text size */
-    line-height: 1.6; /* Line spacing */
-}
-
-.divider-section img {
-    max-width: 200px; /* Uniform image size */
-    margin: 20px auto; /* Center images and add spacing */
-    display: block; /* Ensure images are block elements */
-}
-
-/* About Us Section Styling */
-.about-us-section h2 {
-    color: #ffffff; /* White text for the heading */
+    padding: 20px 0; /* Reduced padding to reduce spacing */
+    text-align: center;
+    color: #ffffff;
     font-family: 'MADE TOMMY', sans-serif;
 }
 
-/* Book Purchase Section Styling */
-.book-purchase-section h2 {
-    color: #ffffff; /* White text for the heading */
+.about-us-section h1 {
+    margin-top: 0;
+    color: #ffffff;
     font-family: 'MADE TOMMY', sans-serif;
+    margin-bottom: 10px; /* Add minimal spacing */
 }
 
-.book-purchase-section img {
-    max-width: 200px; /* Uniform size for Amazon button */
-    margin: 20px auto; /* Add spacing and center align */
-    display: block;
+.about-us-section p {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Donation Section */
+.donation-section h2 {
+    margin-bottom: 10px;
 }
 
 /* Image Slider */
@@ -114,7 +106,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Ensure no horizontal scroll */
+    overflow: hidden;
 }
 
 .slider {
@@ -125,7 +117,7 @@ body {
 }
 
 .slide {
-    width: 100%; /* Ensure each slide is exactly 100% of viewport width */
+    width: 100%;
     flex-shrink: 0;
     height: auto;
 }
@@ -134,7 +126,7 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
-    display: block; /* Remove any inline spacing issues */
+    display: block;
 }
 
 /* Control Buttons */
@@ -157,7 +149,6 @@ body {
     height: 50px;
 }
 
-/* Individual Button Positions */
 .prev-btn {
     top: 50%;
     left: 10px;
@@ -174,10 +165,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 0;
 }
 
-/* Hover Effects */
 .control-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -206,7 +195,7 @@ body {
     align-items: center;
 }
 
-.contact-form input  {
+.contact-form input {
     width: 80%;
     max-width: 500px;
     padding: 10px;
@@ -216,6 +205,7 @@ body {
     background-color: #0b2443;
     color: #fff;
 }
+
 .contact-form textarea {
     width: 80%;
     max-width: 500px;
@@ -281,55 +271,55 @@ body {
     text-decoration: underline;
 }
 
-/* Example modal styling - ensure these styles are either in your CSS file or inline here */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; 
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.5);
-            padding-top: 60px;
-        }
+/* Modals */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+}
 
-        .modal-content {
-            background: #fff;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            max-width: 600px;
-            position: relative;
-        }
+.modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 600px;
+    position: relative;
+}
 
-        .close-btn {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .close-btn:hover,
-        .close-btn:focus {
-            color: #aaa;
-            text-decoration: none;
-            cursor: pointer;
-        }
+.close-btn:hover,
+.close-btn:focus {
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .modal-content {
-        width: 90%; 
+        width: 90%;
         margin-top: 30%;
     }
 }
 
-/* Add this rule to ensure the unmute button is visible on iPad landscape */
 @media screen and (min-width: 1024px) and (orientation: landscape) {
     .intro-video {
-        margin-top: 160px; /* Increase top margin so the unmute button is not hidden */
+        margin-top: 160px; 
     }
 }
