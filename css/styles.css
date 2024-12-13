@@ -341,12 +341,13 @@ body {
 }
 
 .divider-section {
-    background-color: #9fb9c5;
+    background-color: #0b2443;
     padding: 40px 0;
 }
 
 .donation-section h2 {
-    color: #0b2443; /* Adjust text colour as desired */
+    color: #fff; /* Adjust text colour as desired */
+    font-family: 'MADE TOMMY', sans-serif;
 }
 
 /* Adjust images as needed */
