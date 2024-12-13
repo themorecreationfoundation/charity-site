@@ -1,18 +1,17 @@
-/* Reset default margins and paddings for body */
+/* Reset body margins and padding */
 body {
     margin: 0;
     padding: 0;
 }
 
-/* Apply box-sizing to all elements */
+/* Box-sizing */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* Remove default heading and paragraph margins to minimise gaps */
+/* Remove default margins from headings and paragraphs */
 h1, h2, h3, p {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -40,11 +39,9 @@ h1, h2, h3, p {
     max-width: 100%;
 }
 
-/* Adjust tagline styling if needed */
 .tagline h1 {
     color: #0b2443;
     font-family: 'MADE TOMMY', sans-serif;
-    margin: 0;
 }
 
 /* Introduction Video */
@@ -53,7 +50,6 @@ h1, h2, h3, p {
     margin: 0;
     padding: 0;
     margin-top: 124px; /* Offset for fixed navbar */
-    line-height: 0;
 }
 
 .intro-video video {
@@ -64,32 +60,34 @@ h1, h2, h3, p {
     padding: 0;
 }
 
-/* Divider Section */
+/* Divider Sections */
 .divider-section {
-    background-color: #0b2443; /* Dark blue background */
-    padding: 20px 0; /* Reduced padding to reduce spacing */
+    background-color: #0b2443; 
+    padding: 40px 0; /* Consistent padding for uniform height */
     text-align: center;
     color: #ffffff;
     font-family: 'MADE TOMMY', sans-serif;
 }
 
 .about-us-section h1 {
-    margin-top: 0;
-    color: #ffffff;
+    margin-bottom: 20px; /* Space below heading */
     font-family: 'MADE TOMMY', sans-serif;
-    margin-bottom: 10px; /* Add minimal spacing */
 }
 
 .about-us-section p {
-    margin-top: 0;
-    color: #ffffff;
     font-size: 1.2rem;
     line-height: 1.4;
+    margin: 0;
 }
 
 /* Donation Section */
 .donation-section h2 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Book Purchase Section */
+.book-purchase-section h2 {
+    margin-bottom: 20px;
 }
 
 /* Image Slider */
@@ -111,7 +109,6 @@ h1, h2, h3, p {
 
 .slider {
     display: flex;
-    flex-wrap: nowrap;
     transition: transform 1s ease-in-out;
     width: 100%;
 }
@@ -125,14 +122,14 @@ h1, h2, h3, p {
 .slide img {
     width: 100%;
     height: auto;
-    object-fit: cover;
     display: block;
+    object-fit: cover;
 }
 
 /* Control Buttons */
 .control-btn {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     border: none;
     color: #fff;
     cursor: pointer;
@@ -168,7 +165,7 @@ h1, h2, h3, p {
 }
 
 .control-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0,0,0,0.8);
 }
 
 /* Contact Us Form */
@@ -273,8 +270,8 @@ h1, h2, h3, p {
 
 /* Modals */
 .modal {
-    display: none; 
-    position: fixed; 
+    display: none;
+    position: fixed;
     z-index: 9999;
     left: 0;
     top: 0;
@@ -307,7 +304,6 @@ h1, h2, h3, p {
 .close-btn:focus {
     color: #aaa;
     text-decoration: none;
-    cursor: pointer;
 }
 
 /* Responsive Adjustments */
