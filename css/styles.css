@@ -321,3 +321,24 @@ h1, h2, h3, p {
         margin-top: 160px; /* Increase top margin so the unmute button is not hidden */
     }
 }
+
+/* Example: Reduce header size on phone screens in portrait mode */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .navbar {
+        padding: 5px 0; /* Reduce the vertical padding */
+    }
+
+    .navbar .container {
+        width: 95%; /* Slightly narrower container, if desired */
+    }
+
+    .logo img {
+        max-width: 80px; /* Make the logo smaller */
+    }
+
+    .tagline h1 {
+        font-size: 1rem; /* Reduce text size in the tagline */
+        line-height: 1.2; /* Adjust line height for better readability */
+    }
+}
+
