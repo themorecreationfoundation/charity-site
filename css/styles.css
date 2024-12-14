@@ -47,9 +47,11 @@ h1, h2, h3, p {
 /* Introduction Video */
 .intro-video {
     position: relative;
-    margin: 0;
+    /* Reduce the top margin so header doesn't obscure the video */
+    margin-top: 80px; 
+    margin-bottom: 0; /* Ensure no bottom gap */
     padding: 0;
-    margin-top: 124px; /* Offset for fixed navbar */
+    line-height: 0;
 }
 
 .intro-video video {
@@ -67,8 +69,10 @@ h1, h2, h3, p {
     text-align: center;
     color: #ffffff;
     font-family: 'MADE TOMMY', sans-serif;
+    margin-top: 0; /* Ensure no gap above the first divider after video */
 }
 
+/* About Us Section */
 .about-us-section h1 {
     margin-bottom: 20px;
     font-family: 'MADE TOMMY', sans-serif;
@@ -311,6 +315,11 @@ h1, h2, h3, p {
     .modal-content {
         width: 90%;
         margin-top: 30%;
+    }
+
+    /* Adjust top margin further in portrait on smaller devices if needed */
+    .intro-video {
+        margin-top: 60px;
     }
 }
 
