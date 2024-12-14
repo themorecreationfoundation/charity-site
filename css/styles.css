@@ -333,12 +333,12 @@ h1, h2, h3, p {
     }
 
     .logo img {
-        max-width: 80px; /* Make the logo smaller */
+        max-width: 100px; /* Make the logo smaller */
     }
 
     .tagline h1 {
-        font-size: 1rem; /* Reduce text size in the tagline */
-        line-height: 1.2; /* Adjust line height for better readability */
+        font-size: 2rem; /* Reduce text size in the tagline */
+        line-height: 2.2; /* Adjust line height for better readability */
     }
 }
 
