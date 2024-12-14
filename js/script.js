@@ -1,10 +1,21 @@
-// JavaScript code for the image slider
 document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.slider');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const pausePlayBtn = document.getElementById('pause-play-btn');
+    initSlider('.main-slider');
+    initSlider('.author-slider');
+    initModals(); // Function to handle modal logic
+});
+
+function initSlider(selector) {
+    const container = document.querySelector(selector);
+    if (!container) return; // If the container isn't found, exit.
+
+    const slider = container.querySelector('.slider');
+    const slides = container.querySelectorAll('.slide');
+    const prevBtn = container.querySelector('.prev-btn');
+    const nextBtn = container.querySelector('.next-btn');
+    const pausePlayBtn = container.querySelector('.pause-play-btn');
+    
+    if (!slider || slides.length === 0) return;
+
     let currentIndex = 0;
     const totalSlides = slides.length;
     let isPlaying = true;
@@ -25,16 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startSlider() {
-        sliderInterval = setInterval(showNextSlide, 4000); // Change slide every 4 seconds
-        pausePlayBtn.innerHTML = '&#10074;&#10074;'; // Pause symbol matching arrow style
-        pausePlayBtn.setAttribute('aria-label', 'Pause Slider');
+        sliderInterval = setInterval(showNextSlide, 4000);
+        if (pausePlayBtn) {
+            pausePlayBtn.innerHTML = '&#10074;&#10074;';
+            pausePlayBtn.setAttribute('aria-label', 'Pause Slider');
+        }
         isPlaying = true;
     }
 
     function stopSlider() {
         clearInterval(sliderInterval);
-        pausePlayBtn.innerHTML = '&#9658;'; // Play symbol matching arrow style
-        pausePlayBtn.setAttribute('aria-label', 'Play Slider');
+        if (pausePlayBtn) {
+            pausePlayBtn.innerHTML = '&#9658;';
+            pausePlayBtn.setAttribute('aria-label', 'Play Slider');
+        }
         isPlaying = false;
     }
 
@@ -45,26 +60,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Event Listeners for Control Buttons
-    nextBtn.addEventListener('click', () => {
-        showNextSlide();
-        resetSliderInterval();
-    });
+    // Event Listeners if buttons exist
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            showNextSlide();
+            resetSliderInterval();
+        });
+    }
 
-    prevBtn.addEventListener('click', () => {
-        showPrevSlide();
-        resetSliderInterval();
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            showPrevSlide();
+            resetSliderInterval();
+        });
+    }
 
-    pausePlayBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            stopSlider();
-        } else {
-            startSlider();
-        }
-    });
+    if (pausePlayBtn) {
+        pausePlayBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                stopSlider();
+            } else {
+                startSlider();
+            }
+        });
+    }
 
-    // Adjust slider on window resize
+    // Adjust on window resize
     window.addEventListener('resize', () => {
         showSlide(currentIndex);
     });
@@ -72,35 +93,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Slider
     showSlide(currentIndex);
     startSlider();
-});
+}
 
-document.addEventListener('DOMContentLoaded', () => {
+function initModals() {
     const termsLink = document.getElementById('termsLink');
     const privacyLink = document.getElementById('privacyLink');
     const termsModal = document.getElementById('termsModal');
     const privacyModal = document.getElementById('privacyModal');
+    const closeButtons = document.querySelectorAll('.close-btn');
 
     // Open Terms Modal
-    termsLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        termsModal.style.display = 'block';
-    });
+    if (termsLink && termsModal) {
+        termsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            termsModal.style.display = 'block';
+        });
+    }
 
     // Open Privacy Modal
-    privacyLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        privacyModal.style.display = 'block';
-    });
+    if (privacyLink && privacyModal) {
+        privacyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            privacyModal.style.display = 'block';
+        });
+    }
 
-    // Close the modals when the close button (x) is clicked
-    document.querySelectorAll('.close-btn').forEach((btn) => {
+    // Close modals on close button
+    closeButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
             const modalId = btn.getAttribute('data-close');
             document.getElementById(modalId).style.display = 'none';
         });
     });
 
-    // Close the modals when clicking anywhere outside the modal content
+    // Close modals when clicking outside
     window.addEventListener('click', (e) => {
         if (e.target === termsModal) {
             termsModal.style.display = 'none';
@@ -109,5 +135,4 @@ document.addEventListener('DOMContentLoaded', () => {
             privacyModal.style.display = 'none';
         }
     });
-});
-
+}
