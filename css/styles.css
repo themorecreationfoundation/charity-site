@@ -337,8 +337,8 @@ h1, h2, h3, p {
     }
 
     .tagline h1 {
-        font-size: 4rem; /* Reduce text size in the tagline */
-        line-height: 4.2; /* Adjust line height for better readability */
+        font-size: 2rem; /* Reduce text size in the tagline */
+        line-height: 2.2; /* Adjust line height for better readability */
     }
 }
 
