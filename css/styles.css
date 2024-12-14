@@ -48,7 +48,7 @@ h1, h2, h3, p {
 .intro-video {
     position: relative;
     /* Reduce the top margin so header doesn't obscure the video */
-    margin-top: 80px; 
+    margin-top: 134px; 
     margin-bottom: 0; /* Ensure no bottom gap */
     padding: 0;
     line-height: 0;
