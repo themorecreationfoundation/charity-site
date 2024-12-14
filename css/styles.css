@@ -63,14 +63,14 @@ h1, h2, h3, p {
 /* Divider Sections */
 .divider-section {
     background-color: #0b2443; 
-    padding: 40px 0; /* Consistent padding for uniform height */
+    padding: 40px 0;
     text-align: center;
     color: #ffffff;
     font-family: 'MADE TOMMY', sans-serif;
 }
 
 .about-us-section h1 {
-    margin-bottom: 20px; /* Space below heading */
+    margin-bottom: 20px;
     font-family: 'MADE TOMMY', sans-serif;
 }
 
