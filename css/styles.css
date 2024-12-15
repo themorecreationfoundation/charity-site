@@ -45,20 +45,31 @@ h1, h2, h3, p {
 }
 
 /* Introduction Video */
+
 .intro-video {
     position: relative;
     margin: 0;
     padding: 0;
-    margin-top: 124px; /* Offset for fixed navbar */
-    line-height: 0;
+    line-height: 0; /* Ensures no extra spacing */
 }
 
-.intro-video video {
+/* Responsive container for a 16:9 aspect ratio */
+.video-container {
+    position: relative;
     width: 100%;
-    height: auto;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: block;
-    margin: 0;
-    padding: 0;
+    border: 0;
 }
 
 /* Divider Sections */
