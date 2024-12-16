@@ -48,7 +48,7 @@ h1, h2, h3, p {
 
 .intro-video {
     position: relative;
-    margin-top: 80px; /* Ensure video is visible below the fixed header */
+    margin-top: 124px; /* Ensure video is visible below the fixed header */
     margin-bottom: 0;
     padding: 0;
     line-height: 0;
