@@ -45,7 +45,6 @@ h1, h2, h3, p {
 }
 
 /* Introduction Video */
-
 .intro-video {
     position: relative;
     margin-top: 124px; /* Ensure video is visible below the fixed header */
@@ -327,11 +326,9 @@ h1, h2, h3, p {
     }
 }
 
-/* Add this rule to ensure the unmute button is visible on iPad landscape */
+/* Remove overriding landscape rule */
 @media screen and (min-width: 1024px) and (orientation: landscape) {
-    .intro-video {
-        margin-top: 160px; /* Increase top margin so the unmute button is not hidden */
-    }
+    /* No overriding margin-top here */
 }
 
 /* Example: Reduce header size on phone screens in portrait mode */
@@ -340,19 +337,12 @@ h1, h2, h3, p {
         padding: 5px 0; /* Reduce the vertical padding */
     }
 
-    /* Remove any landscape orientation overrides that previously increased margin-top */
-@media screen and (min-width: 1024px) and (orientation: landscape) {
-    .intro-video {
-        /* No change here, so the margin-top remains consistent across orientations */
-    }
-}
-
     .navbar .container {
         width: 95%; /* Slightly narrower container, if desired */
     }
 
     .logo img {
-        max-width: 180px; /* Make the logo smaller */
+        max-width: 180px; /* Adjust logo size as needed */
     }
 
     .tagline h1 {
