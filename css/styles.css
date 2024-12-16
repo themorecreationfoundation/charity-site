@@ -2,6 +2,7 @@
 body {
     margin: 0;
     padding: 0;
+    padding-top: 124px; /* Push entire content below the fixed header */
 }
 
 /* Box-sizing */
@@ -47,8 +48,7 @@ h1, h2, h3, p {
 /* Introduction Video */
 .intro-video {
     position: relative;
-    margin-top: 124px; /* Ensure video is visible below the fixed header */
-    margin-bottom: 0;
+    margin: 0;   /* Removed margin-top */
     padding: 0;
     line-height: 0;
 }
@@ -326,27 +326,24 @@ h1, h2, h3, p {
     }
 }
 
-/* Remove overriding landscape rule */
-@media screen and (min-width: 1024px) and (orientation: landscape) {
-    /* No overriding margin-top here */
-}
+/* No overriding landscape rule */
 
 /* Example: Reduce header size on phone screens in portrait mode */
 @media screen and (max-width: 480px) and (orientation: portrait) {
     .navbar {
-        padding: 5px 0; /* Reduce the vertical padding */
+        padding: 5px 0; /* Reduce vertical padding on small screens */
     }
-
+    
     .navbar .container {
-        width: 95%; /* Slightly narrower container, if desired */
+        width: 95%;
     }
 
     .logo img {
-        max-width: 180px; /* Adjust logo size as needed */
+        max-width: 180px;
     }
 
     .tagline h1 {
-        font-size: 1rem; /* Reduce text size in the tagline */
-        line-height: 1.2; /* Adjust line height for better readability */
+        font-size: 1rem;
+        line-height: 1.2;
     }
 }
