@@ -326,21 +326,35 @@ h1, h2, h3, p {
     }
 }
 
-/* No overriding landscape rule */
+/* Base navbar and button styling remain unchanged above this point */
 
-/* Example: Reduce header size on phone screens in portrait mode */
+/* Reduce header height and button sizes on phone screens in portrait mode */
 @media screen and (max-width: 480px) and (orientation: portrait) {
     .navbar {
-        padding: 5px 0; /* Reduce vertical padding on small screens */
-    }
-    
-    .navbar .container {
-        width: 95%;
+        padding: 5px 0; /* Reduced vertical padding for a shorter header */
     }
 
-    .logo img {
-        max-width: 180px;
+    /* Make PayPal, Patreon, and Amazon buttons smaller */
+    .paypal-button-image,
+    .new-donation-button-image,
+    .amazon-button-image {
+        max-width: 150px; /* Adjust as needed */
     }
+}
+
+/* Reduce header height and button sizes on phone screens in landscape mode */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .navbar {
+        padding: 5px 0; /* Reduced vertical padding for a shorter header */
+    }
+
+    /* Make PayPal, Patreon, and Amazon buttons smaller in landscape mode as well */
+    .paypal-button-image,
+    .new-donation-button-image,
+    .amazon-button-image {
+        max-width: 150px; /* Adjust as needed */
+    }
+}
 
     .tagline h1 {
         font-size: 1rem;
