@@ -361,3 +361,10 @@ h1, h2, h3, p {
         line-height: 1.2;
     }
 }
+
+ }
+
+    .logo img {
+        max-width: 180px;
+    }
+}
