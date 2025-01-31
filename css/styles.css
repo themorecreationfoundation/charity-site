@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    padding-top: 200px; /* Push entire content below the fixed header */
+    /* Removed padding-top: 200px; */
 }
 
 /* Box-sizing */
@@ -18,13 +18,9 @@ h1, h2, h3, p {
 
 /* Navigation Bar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    /* Removed position: fixed; top: 0; left: 0; z-index: 1000; */
     background-color: #fff;
     padding: 10px 0;
-    z-index: 1000;
 }
 
 .navbar .container {
@@ -326,8 +322,6 @@ h1, h2, h3, p {
     }
 }
 
-/* Base navbar and button styling remain unchanged above this point */
-
 /* Reduce header height and button sizes on phone screens in portrait mode */
 @media screen and (max-width: 480px) and (orientation: portrait) {
     .navbar {
@@ -356,15 +350,12 @@ h1, h2, h3, p {
     }
 }
 
-    .tagline h1 {
-        font-size: 1rem;
-        line-height: 1.2;
-    }
+.tagline h1 {
+    font-size: 1rem;
+    line-height: 1.2;
 }
 
- }
-
-    .logo img {
-        max-width: 180px;
-    }
+/* Optional further refinement for the logo size */
+.logo img {
+    max-width: 180px;
 }
