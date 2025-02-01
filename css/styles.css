@@ -34,14 +34,20 @@ h1, h2, h3, p {
     margin: 0 auto;
 }
 
+/* Default logo size for larger screens */
 .logo img {
     height: auto;
-    max-width: 100%;
+    max-width: 360px;
 }
 
+/* Default tagline style */
 .tagline h2 {
     color: #0b2443;
     font-family: 'MADE TOMMY', sans-serif;
+}
+.tagline h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
 }
 
 /* Introduction Video */
@@ -283,7 +289,7 @@ h1, h2, h3, p {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; 
+    overflow: auto;
     background-color: rgba(0,0,0,0.5);
     padding-top: 60px;
 }
@@ -312,60 +318,37 @@ h1, h2, h3, p {
     text-decoration: none;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Modals */
 @media (max-width: 768px) {
     .modal-content {
-        width: 90%; 
+        width: 90%;
         margin-top: 30%;
     }
 }
 
-/* Reduce header and tagline size on smaller screens */
-@media screen and (max-width: 768px) {
+/* --- Responsive Header, Tagline & Logo Adjustments --- */
+@media only screen and (max-width: 768px) {
     .navbar {
-        padding: 5px 0; /* Further reduce header vertical padding */
+        padding: 5px 0 !important;
     }
-    .tagline h2 {
-        font-size: 1.2rem; /* Scale down the tagline font size */
-    }
+    .tagline h2,
     .tagline h1 {
-        font-size: 1.2rem; /* If h1 is used for the tagline, reduce its size too */
+        font-size: 1rem !important;
+    }
+    .logo img {
+        max-width: 180px !important;
     }
 }
 
-/* Reduce header height and button sizes on phone screens in portrait mode */
-@media screen and (max-width: 480px) and (orientation: portrait) {
+@media only screen and (max-width: 480px) {
     .navbar {
-        padding: 10px 0; /* Reduced vertical padding for a shorter header */
+        padding: 3px 0 !important;
     }
-
-    /* Make PayPal, Patreon, and Amazon buttons smaller */
-    .paypal-button-image,
-    .new-donation-button-image,
-    .amazon-button-image {
-        max-width: 150px; /* Adjust as needed */
+    .tagline h2,
+    .tagline h1 {
+        font-size: 0.9rem !important;
     }
-}
-
-/* Reduce header height and button sizes on phone screens in landscape mode */
-@media screen and (max-height: 480px) and (orientation: landscape) {
-    .navbar {
-        padding: 10px 0; /* Reduced vertical padding for a shorter header */
+    .logo img {
+        max-width: 150px !important;
     }
-
-    /* Make PayPal, Patreon, and Amazon buttons smaller in landscape mode as well */
-    .paypal-button-image,
-    .new-donation-button-image,
-    .amazon-button-image {
-        max-width: 150px; /* Adjust as needed */
-    }
-}
-
-.tagline h1 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-}
-
-.logo img {
-    max-width: 360px;
 }
