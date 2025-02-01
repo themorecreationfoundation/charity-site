@@ -18,7 +18,9 @@ function initSlider(selector) {
 
     let currentIndex = 0;
     const totalSlides = slides.length;
-    let isPlaying = true;
+
+    // ▼ Changed to 'false' so it doesn't autoplay.
+    let isPlaying = false;
     let sliderInterval;
 
     function showSlide(index) {
@@ -38,7 +40,7 @@ function initSlider(selector) {
     function startSlider() {
         sliderInterval = setInterval(showNextSlide, 4000);
         if (pausePlayBtn) {
-            pausePlayBtn.innerHTML = '&#10074;&#10074;';
+            pausePlayBtn.innerHTML = '&#10074;&#10074;'; // pause icon
             pausePlayBtn.setAttribute('aria-label', 'Pause Slider');
         }
         isPlaying = true;
@@ -47,7 +49,7 @@ function initSlider(selector) {
     function stopSlider() {
         clearInterval(sliderInterval);
         if (pausePlayBtn) {
-            pausePlayBtn.innerHTML = '&#9658;';
+            pausePlayBtn.innerHTML = '&#9658;'; // play icon
             pausePlayBtn.setAttribute('aria-label', 'Play Slider');
         }
         isPlaying = false;
@@ -90,9 +92,9 @@ function initSlider(selector) {
         showSlide(currentIndex);
     });
 
-    // Initialize Slider
+    // ▼ Only show the initial slide; do not start the interval.
     showSlide(currentIndex);
-    startSlider();
+    // startSlider(); // Removed/Commented out to stop automatic slide.
 }
 
 function initModals() {
