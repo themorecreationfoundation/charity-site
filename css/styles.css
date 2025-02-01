@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    padding-top: 80px; /* Push entire content below the fixed header */
+    padding-top: 50px; /* Push entire content below the fixed header */
 }
 
 /* Box-sizing */
