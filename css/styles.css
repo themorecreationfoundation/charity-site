@@ -320,7 +320,18 @@ h1, h2, h3, p {
     }
 }
 
-/* Base navbar and button styling remain unchanged above this point */
+/* Reduce header and tagline size on smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 5px 0; /* Further reduce header vertical padding */
+    }
+    .tagline h2 {
+        font-size: 1.2rem; /* Scale down the tagline font size */
+    }
+    .tagline h1 {
+        font-size: 1.2rem; /* If h1 is used for the tagline, reduce its size too */
+    }
+}
 
 /* Reduce header height and button sizes on phone screens in portrait mode */
 @media screen and (max-width: 480px) and (orientation: portrait) {
