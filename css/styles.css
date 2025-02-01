@@ -80,7 +80,7 @@ h1, h2, h3, p {
 .divider-section {
     background-color: #0b2443; 
     padding: 40px 0;
-    text-align: centre;
+    text-align: center;
     color: #ffffff;
     font-family: 'MADE TOMMY', sans-serif;
 }
@@ -153,11 +153,10 @@ h1, h2, h3, p {
     font-size: 2em;
     padding: 0;
     display: flex;
-    align-items: centre;
-    justify-content: centre;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Removed pause button by excluding .pause-play-btn */
 .prev-btn, .next-btn {
     width: 50px;
     height: 50px;
@@ -184,7 +183,7 @@ h1, h2, h3, p {
     background-color: #fff;
     padding: 40px 0;
     font-family: 'MADE TOMMY', sans-serif;
-    text-align: centre;
+    text-align: center;
 }
 
 .contact-form h2 {
@@ -200,7 +199,7 @@ h1, h2, h3, p {
 .contact-form form {
     display: flex;
     flex-direction: column;
-    align-items: centre;
+    align-items: center;
 }
 
 .contact-form input {
@@ -250,7 +249,7 @@ h1, h2, h3, p {
     color: #000;
     font-family: 'MADE TOMMY', sans-serif;
     padding: 20px 0;
-    text-align: centre;
+    text-align: center;
 }
 
 .site-footer .container {
@@ -263,7 +262,7 @@ h1, h2, h3, p {
     padding: 0;
     margin: 10px 0 0 0;
     display: flex;
-    justify-content: centre;
+    justify-content: center;
 }
 
 .site-footer li {
@@ -333,11 +332,22 @@ h1, h2, h3, p {
         max-width: 180px !important;
     }
     
-    /* Donation & Book Purchase Button Adjustments */
+    /* Donation & Book Purchase: Center content and adjust button sizes */
+    .donation-section,
+    .book-purchase-section {
+        text-align: center;
+    }
     .donation-section button,
     .book-purchase-section button {
         padding: 8px 16px !important;
         font-size: 0.9rem !important;
+    }
+    
+    /* Fix PayPal, Patreon and Amazon button sizes */
+    .paypal-button-image,
+    .new-donation-button-image,
+    .amazon-button-image {
+        max-width: 150px !important;
     }
 }
 
@@ -355,10 +365,21 @@ h1, h2, h3, p {
         max-width: 150px !important;
     }
     
-    /* Donation & Book Purchase Button Adjustments */
+    /* Donation & Book Purchase: Center content and further adjust button sizes */
+    .donation-section,
+    .book-purchase-section {
+        text-align: center;
+    }
     .donation-section button,
     .book-purchase-section button {
         padding: 6px 12px !important;
         font-size: 0.8rem !important;
+    }
+    
+    /* Fix PayPal, Patreon and Amazon button sizes */
+    .paypal-button-image,
+    .new-donation-button-image,
+    .amazon-button-image {
+        max-width: 150px !important;
     }
 }
