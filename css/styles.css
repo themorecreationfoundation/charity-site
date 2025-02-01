@@ -58,7 +58,6 @@ h1, h2, h3, p {
     line-height: 0;
 }
 
-/* Responsive container for a 16:9 aspect ratio */
 .intro-video .video-container {
     position: relative;
     width: 100%;
@@ -81,7 +80,7 @@ h1, h2, h3, p {
 .divider-section {
     background-color: #0b2443; 
     padding: 40px 0;
-    text-align: center;
+    text-align: centre;
     color: #ffffff;
     font-family: 'MADE TOMMY', sans-serif;
 }
@@ -154,8 +153,8 @@ h1, h2, h3, p {
     font-size: 2em;
     padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: centre;
+    justify-content: centre;
 }
 
 /* Removed pause button by excluding .pause-play-btn */
@@ -185,7 +184,7 @@ h1, h2, h3, p {
     background-color: #fff;
     padding: 40px 0;
     font-family: 'MADE TOMMY', sans-serif;
-    text-align: center;
+    text-align: centre;
 }
 
 .contact-form h2 {
@@ -201,7 +200,7 @@ h1, h2, h3, p {
 .contact-form form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: centre;
 }
 
 .contact-form input {
@@ -251,7 +250,7 @@ h1, h2, h3, p {
     color: #000;
     font-family: 'MADE TOMMY', sans-serif;
     padding: 20px 0;
-    text-align: center;
+    text-align: centre;
 }
 
 .site-footer .container {
@@ -264,7 +263,7 @@ h1, h2, h3, p {
     padding: 0;
     margin: 10px 0 0 0;
     display: flex;
-    justify-content: center;
+    justify-content: centre;
 }
 
 .site-footer li {
@@ -318,16 +317,11 @@ h1, h2, h3, p {
     text-decoration: none;
 }
 
-/* Responsive Adjustments for Modals */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 90%;
-        margin-top: 30%;
-    }
-}
+/* --- Responsive Adjustments --- */
 
-/* --- Responsive Header, Tagline & Logo Adjustments --- */
-@media only screen and (max-width: 768px) {
+/* For screens 768px wide or less */
+@media screen and (max-width: 768px) {
+    /* Header, Tagline & Logo */
     .navbar {
         padding: 5px 0 !important;
     }
@@ -338,9 +332,18 @@ h1, h2, h3, p {
     .logo img {
         max-width: 180px !important;
     }
+    
+    /* Donation & Book Purchase Button Adjustments */
+    .donation-section button,
+    .book-purchase-section button {
+        padding: 8px 16px !important;
+        font-size: 0.9rem !important;
+    }
 }
 
-@media only screen and (max-width: 480px) {
+/* For screens 480px wide or less */
+@media screen and (max-width: 480px) {
+    /* Header, Tagline & Logo */
     .navbar {
         padding: 3px 0 !important;
     }
@@ -351,18 +354,8 @@ h1, h2, h3, p {
     .logo img {
         max-width: 150px !important;
     }
-}
-
-/* --- Responsive Donation & Book Purchase Button Adjustments --- */
-@media only screen and (max-width: 768px) {
-    .donation-section button,
-    .book-purchase-section button {
-        padding: 8px 16px !important;
-        font-size: 0.9rem !important;
-    }
-}
-
-@media only screen and (max-width: 480px) {
+    
+    /* Donation & Book Purchase Button Adjustments */
     .donation-section button,
     .book-purchase-section button {
         padding: 6px 12px !important;
