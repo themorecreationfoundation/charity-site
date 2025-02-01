@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    padding-top: 50px; /* Push entire content below the fixed header */
+    padding-top: 100px; /* Push entire content below the fixed header */
 }
 
 /* Box-sizing */
@@ -356,5 +356,5 @@ h1, h2, h3, p {
 }
 
 .logo img {
-    max-width: 280px;
+    max-width: 180px;
 }
