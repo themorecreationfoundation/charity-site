@@ -58,6 +58,7 @@ h1, h2, h3, p {
     line-height: 0;
 }
 
+/* Responsive container for a 16:9 aspect ratio */
 .intro-video .video-container {
     position: relative;
     width: 100%;
@@ -157,6 +158,7 @@ h1, h2, h3, p {
     justify-content: center;
 }
 
+/* Removed pause button by excluding .pause-play-btn */
 .prev-btn, .next-btn {
     width: 50px;
     height: 50px;
@@ -316,11 +318,16 @@ h1, h2, h3, p {
     text-decoration: none;
 }
 
-/* --- Responsive Adjustments --- */
+/* Responsive Adjustments for Modals */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin-top: 30%;
+    }
+}
 
-/* For screens 768px wide or less */
-@media screen and (max-width: 768px) {
-    /* Header, Tagline & Logo */
+/* --- Responsive Header, Tagline & Logo Adjustments --- */
+@media only screen and (max-width: 768px) {
     .navbar {
         padding: 5px 0 !important;
     }
@@ -331,29 +338,9 @@ h1, h2, h3, p {
     .logo img {
         max-width: 180px !important;
     }
-    
-    /* Donation & Book Purchase: Center content and adjust button sizes */
-    .donation-section,
-    .book-purchase-section {
-        text-align: center;
-    }
-    .donation-section button,
-    .book-purchase-section button {
-        padding: 8px 16px !important;
-        font-size: 0.9rem !important;
-    }
-    
-    /* Fix PayPal, Patreon and Amazon button sizes */
-    .paypal-button-image,
-    .new-donation-button-image,
-    .amazon-button-image {
-        max-width: 150px !important;
-    }
 }
 
-/* For screens 480px wide or less */
-@media screen and (max-width: 480px) {
-    /* Header, Tagline & Logo */
+@media only screen and (max-width: 480px) {
     .navbar {
         padding: 3px 0 !important;
     }
@@ -362,24 +349,6 @@ h1, h2, h3, p {
         font-size: 0.9rem !important;
     }
     .logo img {
-        max-width: 150px !important;
-    }
-    
-    /* Donation & Book Purchase: Center content and further adjust button sizes */
-    .donation-section,
-    .book-purchase-section {
-        text-align: center;
-    }
-    .donation-section button,
-    .book-purchase-section button {
-        padding: 6px 12px !important;
-        font-size: 0.8rem !important;
-    }
-    
-    /* Fix PayPal, Patreon and Amazon button sizes */
-    .paypal-button-image,
-    .new-donation-button-image,
-    .amazon-button-image {
         max-width: 150px !important;
     }
 }
