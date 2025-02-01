@@ -12,14 +12,13 @@ function initSlider(selector) {
     const slides = container.querySelectorAll('.slide');
     const prevBtn = container.querySelector('.prev-btn');
     const nextBtn = container.querySelector('.next-btn');
-    const pausePlayBtn = container.querySelector('.pause-play-btn');
     
     if (!slider || slides.length === 0) return;
 
     let currentIndex = 0;
     const totalSlides = slides.length;
 
-    // ▼ Changed to 'false' so it doesn't autoplay.
+    // Auto-play variables (currently not in use as autoplay is disabled)
     let isPlaying = false;
     let sliderInterval;
 
@@ -37,21 +36,14 @@ function initSlider(selector) {
         showSlide(currentIndex);
     }
 
+    // Auto-play functions (if needed, these can be enabled later)
     function startSlider() {
         sliderInterval = setInterval(showNextSlide, 4000);
-        if (pausePlayBtn) {
-            pausePlayBtn.innerHTML = '&#10074;&#10074;'; // pause icon
-            pausePlayBtn.setAttribute('aria-label', 'Pause Slider');
-        }
         isPlaying = true;
     }
 
     function stopSlider() {
         clearInterval(sliderInterval);
-        if (pausePlayBtn) {
-            pausePlayBtn.innerHTML = '&#9658;'; // play icon
-            pausePlayBtn.setAttribute('aria-label', 'Play Slider');
-        }
         isPlaying = false;
     }
 
@@ -62,7 +54,7 @@ function initSlider(selector) {
         }
     }
 
-    // Event Listeners if buttons exist
+    // Event Listeners for navigation buttons
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             showNextSlide();
@@ -77,24 +69,15 @@ function initSlider(selector) {
         });
     }
 
-    if (pausePlayBtn) {
-        pausePlayBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                stopSlider();
-            } else {
-                startSlider();
-            }
-        });
-    }
-
     // Adjust on window resize
     window.addEventListener('resize', () => {
         showSlide(currentIndex);
     });
 
-    // ▼ Only show the initial slide; do not start the interval.
+    // Only show the initial slide; do not start the interval.
     showSlide(currentIndex);
-    // startSlider(); // Removed/Commented out to stop automatic slide.
+    // Uncomment the following line if you wish to enable autoplay:
+    // startSlider();
 }
 
 function initModals() {
