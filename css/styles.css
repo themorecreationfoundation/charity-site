@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    padding-top: 100px; /* Push entire content below the fixed header */
+    padding-top: 50px; /* Push entire content below the fixed header */
 }
 
 /* Box-sizing */
@@ -330,7 +330,7 @@ h1, h2, h3, p {
 /* Reduce header height and button sizes on phone screens in portrait mode */
 @media screen and (max-width: 480px) and (orientation: portrait) {
     .navbar {
-        padding: 100px 0; /* Reduced vertical padding for a shorter header */
+        padding: 10px 0; /* Reduced vertical padding for a shorter header */
     }
 
     /* Make PayPal, Patreon, and Amazon buttons smaller */
