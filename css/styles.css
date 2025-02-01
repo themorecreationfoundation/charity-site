@@ -342,7 +342,7 @@ h1, h2, h3, p {
 
 @media only screen and (max-width: 480px) {
     .navbar {
-        padding: 3px 0 !important;
+        padding: 5px 0 !important;
     }
     .tagline h2,
     .tagline h1 {
