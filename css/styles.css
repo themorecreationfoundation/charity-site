@@ -152,7 +152,8 @@ h1, h2, h3, p {
     justify-content: center;
 }
 
-.prev-btn, .next-btn, .pause-play-btn {
+/* Removed pause button by excluding .pause-play-btn */
+.prev-btn, .next-btn {
     width: 50px;
     height: 50px;
 }
@@ -167,12 +168,6 @@ h1, h2, h3, p {
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
-}
-
-.pause-play-btn {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .control-btn:hover {
@@ -355,15 +350,11 @@ h1, h2, h3, p {
     }
 }
 
-    .tagline h1 {
-        font-size: 1rem;
-        line-height: 1.2;
-    }
+.tagline h1 {
+    font-size: 1rem;
+    line-height: 1.2;
 }
 
- }
-
-    .logo img {
-        max-width: 180px;
-    }
+.logo img {
+    max-width: 180px;
 }
