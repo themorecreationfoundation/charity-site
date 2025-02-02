@@ -352,3 +352,8 @@ h1, h2, h3, p {
         max-width: 150px !important;
     }
 }
+.cover-and-button {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing as needed */
+}
