@@ -336,7 +336,7 @@ h1, h2, h3, p {
         font-size: 1rem !important;
     }
     .logo img {
-        max-width: 180px !important;
+        max-width: 100px !important;
     }
 }
 
@@ -349,7 +349,7 @@ h1, h2, h3, p {
         font-size: 0.9rem !important;
     }
     .logo img {
-        max-width: 150px !important;
+        max-width: 100px !important;
     }
 }
 .amazon-cover {
