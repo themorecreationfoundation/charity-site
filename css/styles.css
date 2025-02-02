@@ -353,6 +353,6 @@ h1, h2, h3, p {
     }
 }
 .amazon-cover {
-    width: 150px;  /* Adjust this value as needed to match Amazon's typical cover size */
+    width: 250px;  /* Adjust this value as needed to match Amazon's typical cover size */
     height: auto;
 }
