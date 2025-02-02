@@ -352,8 +352,7 @@ h1, h2, h3, p {
         max-width: 150px !important;
     }
 }
-.thumbnail {
-    width: 100px; /* Thumbnail width */
+.amazon-cover {
+    width: 200px;  /* Adjust this value as needed to match Amazon's typical cover size */
     height: auto;
 }
-
