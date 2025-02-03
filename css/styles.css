@@ -358,7 +358,8 @@ h1, h2, h3, p {
     }
     /* Further reduce PayPal and Patreon button sizes */
     .paypal-button-image,
-    .new-donation-button-image {
+    .new-donation-button-image
+    .amazon-button-image {
         max-width: 120px !important;
     }
 }
