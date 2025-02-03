@@ -338,6 +338,11 @@ h1, h2, h3, p {
     .logo img {
         max-width: 200px !important;
     }
+    /* Reduce PayPal and Patreon button sizes */
+    .paypal-button-image,
+    .new-donation-button-image {
+        max-width: 150px !important;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -350,6 +355,11 @@ h1, h2, h3, p {
     }
     .logo img {
         max-width: 200px !important;
+    }
+    /* Further reduce PayPal and Patreon button sizes */
+    .paypal-button-image,
+    .new-donation-button-image {
+        max-width: 120px !important;
     }
 }
 .amazon-cover {
