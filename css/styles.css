@@ -338,9 +338,10 @@ h1, h2, h3, p {
     .logo img {
         max-width: 200px !important;
     }
-    /* Reduce PayPal and Patreon button sizes */
+    /* Reduce PayPal, Patreon, and Amazon button sizes */
     .paypal-button-image,
-    .new-donation-button-image {
+    .new-donation-button-image,
+    .amazon-button-image {
         max-width: 150px !important;
     }
 }
@@ -356,9 +357,9 @@ h1, h2, h3, p {
     .logo img {
         max-width: 200px !important;
     }
-    /* Further reduce PayPal and Patreon button sizes */
+    /* Further reduce PayPal, Patreon, and Amazon button sizes */
     .paypal-button-image,
-    .new-donation-button-image
+    .new-donation-button-image,
     .amazon-button-image {
         max-width: 120px !important;
     }
