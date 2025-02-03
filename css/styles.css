@@ -361,7 +361,7 @@ h1, h2, h3, p {
     .paypal-button-image,
     .new-donation-button-image,
     .amazon-button-image {
-        max-width: 120px !important;
+        max-width: 180px !important;
     }
 }
 .amazon-cover {
