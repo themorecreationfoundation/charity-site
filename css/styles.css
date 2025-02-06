@@ -103,6 +103,14 @@ h1, h2, h3, p {
     margin-bottom: 20px;
 }
 
+.donation-section a {
+    margin-right: 10px; /* Add spacing between buttons */
+}
+
+.donation-section a:last-child {
+    margin-right: 0; /* Remove margin for the last button */
+}
+
 /* Book Purchase Section */
 .book-purchase-section h2 {
     margin-bottom: 20px;
