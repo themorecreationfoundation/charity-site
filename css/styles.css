@@ -167,7 +167,6 @@ h1, h2, h3, p {
     justify-content: center;
 }
 
-/* Removed pause button by excluding .pause-play-btn */
 .prev-btn, .next-btn {
     width: 50px;
     height: 50px;
@@ -335,7 +334,25 @@ h1, h2, h3, p {
     }
 }
 
-/* --- Responsive Header, Tagline & Logo Adjustments --- */
+/* Amazon cover size */
+.amazon-cover {
+    width: 250px;  /* Adjust as needed */
+    height: auto;
+}
+
+/* Always stack the Amazon cover and button vertically */
+.cover-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 
+   ----- Unified Mobile Breakpoint -----
+   Ensures the same text in portrait & landscape
+   on screens up to 768px.
+*/
 @media only screen and (max-width: 768px) {
     .navbar {
         padding: 5px 0 !important;
@@ -347,43 +364,10 @@ h1, h2, h3, p {
     .logo img {
         max-width: 200px !important;
     }
-    /* Reduce PayPal, Patreon, and Amazon button sizes */
+    /* Consistent button sizes */
     .paypal-button-image,
     .new-donation-button-image,
     .amazon-button-image {
         max-width: 180px !important;
     }
-}
-
-@media only screen and (max-width: 480px) {
-    .navbar {
-        padding: 5px 0 !important;
-    }
-    .tagline h2,
-    .tagline h1 {
-        font-size: 0.9rem !important;
-    }
-    .logo img {
-        max-width: 200px !important;
-    }
-    /* Further reduce PayPal, Patreon, and Amazon button sizes */
-    .paypal-button-image,
-    .new-donation-button-image,
-    .amazon-button-image {
-        max-width: 180px !important;
-    }
-}
-
-/* Amazon cover size */
-.amazon-cover {
-    width: 250px;  /* Adjust this value as needed to match Amazon's typical cover size */
-    height: auto;
-}
-
-/* Always stack the Amazon cover and button vertically */
-.cover-and-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
 }
