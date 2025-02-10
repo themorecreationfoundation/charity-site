@@ -34,37 +34,40 @@ h1, h2, h3, p {
     margin: 0 auto;
 }
 
-/* Default logo size */
+/* Default logo size for larger screens */
 .logo img {
     height: auto;
     max-width: 360px;
 }
 
-/* Tagline style (applies to all screens, portrait or landscape) */
+/* Default tagline style */
 .tagline h2 {
     color: #0b2443;
     font-family: 'MADE TOMMY', sans-serif;
 }
 .tagline h1 {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     line-height: 1.2;
 }
 
 /* Introduction Video */
 .intro-video {
     position: relative;
-    margin: 0;
+    margin: 0;   /* Removed margin-top */
     padding: 0;
     line-height: 0;
 }
+
+/* Responsive container for a 16:9 aspect ratio */
 .intro-video .video-container {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
-    background-color: #0b2443; 
+    background-color: #0b2443; /* Added background to match divider-section */
 }
+
 .intro-video .video-container iframe {
     position: absolute;
     top: 0;
@@ -99,11 +102,13 @@ h1, h2, h3, p {
 .donation-section h2 {
     margin-bottom: 20px;
 }
+
 .donation-section a {
-    margin-right: 10px;
+    margin-right: 10px; /* Add spacing between buttons */
 }
+
 .donation-section a:last-child {
-    margin-right: 0;
+    margin-right: 0; /* Remove margin for the last button */
 }
 
 /* Book Purchase Section */
@@ -120,22 +125,26 @@ h1, h2, h3, p {
     padding: 0;
     line-height: 0;
 }
+
 .slider-container {
     width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
+
 .slider {
     display: flex;
     transition: transform 1s ease-in-out;
     width: 100%;
 }
+
 .slide {
     width: 100%;
     flex-shrink: 0;
     height: auto;
 }
+
 .slide img {
     width: 100%;
     height: auto;
@@ -158,6 +167,7 @@ h1, h2, h3, p {
     justify-content: center;
 }
 
+/* Removed pause button by excluding .pause-play-btn */
 .prev-btn, .next-btn {
     width: 50px;
     height: 50px;
@@ -168,6 +178,7 @@ h1, h2, h3, p {
     left: 10px;
     transform: translateY(-50%);
 }
+
 .next-btn {
     top: 50%;
     right: 10px;
@@ -185,19 +196,23 @@ h1, h2, h3, p {
     font-family: 'MADE TOMMY', sans-serif;
     text-align: center;
 }
+
 .contact-form h2 {
     color: #0b2443;
     margin-bottom: 20px;
 }
+
 .contact-form .container {
     width: 90%;
     margin: 0 auto;
 }
+
 .contact-form form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .contact-form input {
     width: 80%;
     max-width: 500px;
@@ -208,6 +223,7 @@ h1, h2, h3, p {
     background-color: #0b2443;
     color: #fff;
 }
+
 .contact-form textarea {
     width: 80%;
     max-width: 500px;
@@ -219,10 +235,12 @@ h1, h2, h3, p {
     color: #fff;
     height: 150px;
 }
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: #fff;
 }
+
 .contact-form button {
     padding: 10px 20px;
     border: none;
@@ -231,6 +249,7 @@ h1, h2, h3, p {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .contact-form button:hover {
     background-color: #e66a00;
 }
@@ -243,10 +262,12 @@ h1, h2, h3, p {
     padding: 20px 0;
     text-align: center;
 }
+
 .site-footer .container {
     width: 90%;
     margin: 0 auto;
 }
+
 .site-footer ul {
     list-style: none;
     padding: 0;
@@ -254,13 +275,16 @@ h1, h2, h3, p {
     display: flex;
     justify-content: center;
 }
+
 .site-footer li {
     margin: 0 10px;
 }
+
 .site-footer a {
     color: #000;
     text-decoration: none;
 }
+
 .site-footer a:hover {
     text-decoration: underline;
 }
@@ -278,6 +302,7 @@ h1, h2, h3, p {
     background-color: rgba(0,0,0,0.5);
     padding-top: 60px;
 }
+
 .modal-content {
     background: #fff;
     margin: 5% auto;
@@ -286,6 +311,7 @@ h1, h2, h3, p {
     max-width: 600px;
     position: relative;
 }
+
 .close-btn {
     position: absolute;
     right: 20px;
@@ -294,11 +320,14 @@ h1, h2, h3, p {
     font-weight: bold;
     cursor: pointer;
 }
+
 .close-btn:hover,
 .close-btn:focus {
     color: #aaa;
     text-decoration: none;
 }
+
+/* Responsive Adjustments for Modals */
 @media (max-width: 768px) {
     .modal-content {
         width: 90%;
@@ -306,13 +335,52 @@ h1, h2, h3, p {
     }
 }
 
+/* --- Responsive Header, Tagline & Logo Adjustments --- */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 5px 0 !important;
+    }
+    .tagline h2,
+    .tagline h1 {
+        font-size: 1rem !important;
+    }
+    .logo img {
+        max-width: 200px !important;
+    }
+    /* Reduce PayPal, Patreon, and Amazon button sizes */
+    .paypal-button-image,
+    .new-donation-button-image,
+    .amazon-button-image {
+        max-width: 180px !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .navbar {
+        padding: 5px 0 !important;
+    }
+    .tagline h2,
+    .tagline h1 {
+        font-size: 0.9rem !important;
+    }
+    .logo img {
+        max-width: 200px !important;
+    }
+    /* Further reduce PayPal, Patreon, and Amazon button sizes */
+    .paypal-button-image,
+    .new-donation-button-image,
+    .amazon-button-image {
+        max-width: 180px !important;
+    }
+}
+
 /* Amazon cover size */
 .amazon-cover {
-    width: 250px; /* Adjust as needed */
+    width: 250px;  /* Adjust this value as needed to match Amazon's typical cover size */
     height: auto;
 }
 
-/* Stack the Amazon cover and button vertically */
+/* Always stack the Amazon cover and button vertically */
 .cover-and-button {
     display: flex;
     flex-direction: column;
