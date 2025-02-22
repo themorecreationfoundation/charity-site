@@ -37,7 +37,7 @@ h1, h2, h3, p {
 /* Default logo size for larger screens */
 .logo img {
     height: auto;
-    max-width: 360px;
+    max-width: 460px;
 }
 
 /* Default tagline style */
