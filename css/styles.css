@@ -37,7 +37,7 @@ h1, h2, h3, p {
 /* Default logo size for larger screens */
 .logo img {
     height: auto;
-    max-width: 660px;
+    max-width: 720px;
 }
 
 /* Default tagline style */
@@ -345,7 +345,7 @@ h1, h2, h3, p {
         font-size: 1rem !important;
     }
     .logo img {
-        max-width: 200px !important;
+        max-width: 400px !important;
     }
     /* Reduce PayPal, Patreon, and Amazon button sizes */
     .paypal-button-image,
@@ -364,7 +364,7 @@ h1, h2, h3, p {
         font-size: 0.9rem !important;
     }
     .logo img {
-        max-width: 200px !important;
+        max-width: 400px !important;
     }
     /* Further reduce PayPal, Patreon, and Amazon button sizes */
     .paypal-button-image,
