@@ -387,3 +387,23 @@ h1, h2, h3, p {
     align-items: center;
     gap: 10px;
 }
+/* Example: default size for larger screens */
+.paypal-button-image {
+  max-width: 240px; /* Adjust as desired */
+  height: auto;
+}
+
+/* Tablet screens (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+  .paypal-button-image {
+    max-width: 180px; /* Reduce size on tablets */
+  }
+}
+
+/* Mobile screens (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  .paypal-button-image {
+    max-width: 150px; /* Further reduce size on phones */
+  }
+}
+
