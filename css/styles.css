@@ -18,6 +18,7 @@ h1, h2, h3, p {
 
 /* Navigation Bar */
 .navbar {
+    position: sticky; /* Added to make the navbar sticky */
     top: 0;
     left: 0;
     width: 100%;
