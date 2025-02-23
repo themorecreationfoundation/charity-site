@@ -409,3 +409,50 @@ h1, h2, h3, p {
   }
 }
 
+/* Social Media Section Styles */
+.social-media {
+  padding: 20px 0;
+  text-align: center; /* Centres the content within the section */
+}
+
+.social-media .social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centres the icons horizontally */
+  align-items: center;
+  gap: 20px; /* Adds space between each icon */
+}
+
+.social-media .social-links li {
+  display: inline-block;
+}
+
+.social-media .social-links li a img {
+  display: block;
+  width: 50px; /* Default size for larger screens */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.social-media .social-links li a:hover img {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Responsive adjustments */
+
+/* For tablet screens */
+@media (max-width: 768px) {
+  .social-media .social-links li a img {
+    width: 40px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .social-media .social-links li a img {
+    width: 30px;
+  }
+}
+
