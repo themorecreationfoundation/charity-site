@@ -415,6 +415,11 @@ h1, h2, h3, p {
   text-align: center; /* Centres the content within the section */
 }
 
+.social-media h2 {
+    color: #0b2443;
+    margin-bottom: 20px;
+}
+
 .social-media .social-links {
   list-style: none;
   margin: 0;
