@@ -12,24 +12,27 @@
       width: 100%;
     }
     body {
-      /* Fallback background colour */
-      background-color: #000;
-
-      /* Use your actual image path below */
-      background-image: url('images/COMING-SOON.png');
-
-      /* Center the background image and ensure it displays the entire image */
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      /* 
+        Fallback background colour for when the image isn't loaded 
+        and for letterboxing if aspect ratios don't match 
+      */
+      background-color: #000; 
       
       /* 
-        Note: If you want the image to fill the screen 
-        (but risk some cropping), use background-size: cover; 
+        1) "center center" ensures the image is centred horizontally & vertically
+        2) "no-repeat" prevents repetition of the image
+        3) "fixed" keeps the image stationary when scrolling
       */
+      background: url('images/COMING-SOON.png') no-repeat center center fixed;
+
+      /* 
+        "cover" ensures the image always fills the viewport while maintaining its aspect ratio, 
+        potentially cropping parts of the image on very narrow or wide screens 
+      */
+      background-size: cover;
     }
 
-    /* Optional overlay for text (remove if not needed) */
+    /* Optional overlay for text or additional content */
     .overlay {
       position: absolute;
       top: 50%;
@@ -42,7 +45,7 @@
       padding: 0 1rem;
     }
 
-    /* Adjust the text size on smaller screens */
+    /* Adjust overlay text size on smaller screens */
     @media (max-width: 768px) {
       .overlay {
         font-size: 1.5rem;
