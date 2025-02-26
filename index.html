@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The More Creation Foundation - UNDER CONSTRUCTION</title>
   <style>
+    /* Global Reset & Background */
     html, body {
       margin: 0;
       padding: 0;
@@ -12,23 +13,37 @@
       width: 100%;
       background-color: #00002e;
     }
+
+    /* Container for all content */
     .coming-soon-container {
       text-align: center;
       padding: 40px 20px;
       color: #fff;
     }
+
+    /* "UNDER CONSTRUCTION" heading */
     .construction-text {
       font-family: 'Made Tommy', sans-serif;
       font-weight: bold;
       font-size: 2.5rem;
       margin-top: 20px;
     }
+
+    /* Logo styling */
     .logo {
-      max-width: 80%;
+      /* Keep the image height auto to maintain aspect ratio */
       height: auto;
-      margin: 20px auto;
       display: block;
+      margin: 20px auto;
+      /* 
+        On very large screens, limit the logo to a maximum of 400px in width
+        so it doesn't grow too large.
+      */
+      max-width: 400px;
+      width: 80%; /* For screens narrower than 500px, 80% of container width */
     }
+
+    /* Slogan styling */
     .slogan-text {
       font-family: 'Baskerville', serif;
       font-weight: bold;
@@ -36,7 +51,8 @@
       font-size: 1.8rem;
       margin-bottom: 20px;
     }
-    /* Responsive adjustments */
+
+    /* Tablet responsiveness */
     @media (max-width: 768px) {
       .construction-text {
         font-size: 2rem;
@@ -45,6 +61,8 @@
         font-size: 1.5rem;
       }
     }
+
+    /* Mobile responsiveness */
     @media (max-width: 480px) {
       .construction-text {
         font-size: 1.5rem;
@@ -52,13 +70,12 @@
       .slogan-text {
         font-size: 1.2rem;
       }
+      /* For very small screens, allow the logo to fill more width */
       .logo {
         max-width: 90%;
       }
     }
   </style>
-  <!-- If you have web-hosted or locally available font files for Made Tommy and Baskerville,
-       include them here via @font-face or a <link> to the respective stylesheet -->
 </head>
 <body>
   <div class="coming-soon-container">
