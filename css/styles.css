@@ -481,4 +481,7 @@ h1, h2, h3, p {
   #learnMoreModal .modal-content p {
     margin-bottom: 1em;
   }
+html, body {
+    overflow-x: hidden;
+}
   
