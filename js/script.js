@@ -102,6 +102,16 @@ function initModals() {
             privacyModal.style.display = 'block';
         });
     }
+    
+    // Open Learn More Modal (new code)
+    const learnMoreButton = document.getElementById('learnMoreButton');
+    const learnMoreModal = document.getElementById('learnMoreModal');
+    if (learnMoreButton && learnMoreModal) {
+        learnMoreButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            learnMoreModal.style.display = 'block';
+        });
+    }
 
     // Close modals on close button
     closeButtons.forEach((btn) => {
@@ -118,6 +128,9 @@ function initModals() {
         }
         if (e.target === privacyModal) {
             privacyModal.style.display = 'none';
+        }
+        if (e.target === learnMoreModal) {
+            learnMoreModal.style.display = 'none';
         }
     });
 }
