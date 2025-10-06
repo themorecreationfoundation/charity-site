@@ -1,8 +1,10 @@
-/* Reset body margins and padding */
-body {
+/* Ensure html and body span full height and prevent horizontal scrolling */
+html, body {
     margin: 0;
     padding: 0;
-    padding-top: 40px; /* Push entire content below the fixed header */
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* Box-sizing */
@@ -18,8 +20,9 @@ h1, h2, h3, p {
 
 /* Navigation Bar */
 .navbar {
-    position: sticky; /* Added to make the navbar sticky */
-    top: 0;
+    position: -webkit-sticky !important; /* For Safari */
+    position: sticky !important;
+    top: 0 !important;
     left: 0;
     width: 100%;
     background-color: #fff;
@@ -52,9 +55,10 @@ h1, h2, h3, p {
 }
 
 /* Introduction Video */
+/* Added a top margin so that content doesn’t hide beneath the sticky header */
 .intro-video {
     position: relative;
-    margin: 0;   /* Removed margin-top */
+    margin: 40px 0 0 0;
     padding: 0;
     line-height: 0;
 }
@@ -66,7 +70,7 @@ h1, h2, h3, p {
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
-    background-color: #0b2443; /* Added background to match divider-section */
+    background-color: #0b2443;
 }
 
 .intro-video .video-container iframe {
@@ -105,11 +109,11 @@ h1, h2, h3, p {
 }
 
 .donation-section a {
-    margin-right: 10px; /* Add spacing between buttons */
+    margin-right: 10px;
 }
 
 .donation-section a:last-child {
-    margin-right: 0; /* Remove margin for the last button */
+    margin-right: 0;
 }
 
 /* Book Purchase Section */
@@ -168,7 +172,6 @@ h1, h2, h3, p {
     justify-content: center;
 }
 
-/* Removed pause button by excluding .pause-play-btn */
 .prev-btn, .next-btn {
     width: 50px;
     height: 50px;
@@ -348,7 +351,6 @@ h1, h2, h3, p {
     .logo img {
         max-width: 200px !important;
     }
-    /* Reduce PayPal, Patreon, and Amazon button sizes */
     .paypal-button-image,
     .new-donation-button-image,
     .amazon-button-image {
@@ -367,7 +369,6 @@ h1, h2, h3, p {
     .logo img {
         max-width: 200px !important;
     }
-    /* Further reduce PayPal, Patreon, and Amazon button sizes */
     .paypal-button-image,
     .new-donation-button-image,
     .amazon-button-image {
@@ -377,7 +378,7 @@ h1, h2, h3, p {
 
 /* Amazon cover size */
 .amazon-cover {
-    width: 250px;  /* Adjust this value as needed to match Amazon's typical cover size */
+    width: 250px;
     height: auto;
 }
 
@@ -391,28 +392,28 @@ h1, h2, h3, p {
 
 /* Example: default size for larger screens */
 .paypal-button-image {
-  max-width: 240px; /* Adjust as desired */
-  height: auto;
+    max-width: 240px;
+    height: auto;
 }
 
 /* Tablet screens (max-width: 768px) */
 @media only screen and (max-width: 768px) {
-  .paypal-button-image {
-    max-width: 180px; /* Reduce size on tablets */
-  }
+    .paypal-button-image {
+        max-width: 180px;
+    }
 }
 
 /* Mobile screens (max-width: 480px) */
 @media only screen and (max-width: 480px) {
-  .paypal-button-image {
-    max-width: 150px; /* Further reduce size on phones */
-  }
+    .paypal-button-image {
+        max-width: 150px;
+    }
 }
 
 /* Social Media Section Styles */
 .social-media {
-  padding: 20px 0;
-  text-align: center; /* Centres the content within the section */
+    padding: 20px 0;
+    text-align: center;
 }
 
 .social-media h2 {
@@ -422,66 +423,50 @@ h1, h2, h3, p {
 }
 
 .social-media .social-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center; /* Centres the icons horizontally */
-  align-items: center;
-  gap: 20px; /* Adds space between each icon */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .social-media .social-links li {
-  display: inline-block;
+    display: inline-block;
 }
 
 .social-media .social-links li a img {
-  display: block;
-  width: 50px; /* Default size for larger screens */
-  height: auto;
-  transition: transform 0.3s ease;
+    display: block;
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .social-media .social-links li a:hover img {
-  transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.1);
 }
 
-/* Responsive adjustments */
-
-/* For tablet screens */
+/* Responsive adjustments for social icons */
 @media (max-width: 768px) {
-  .social-media .social-links li a img {
-    width: 40px;
-  }
+    .social-media .social-links li a img {
+        width: 40px;
+    }
 }
-
-/* For mobile screens */
 @media (max-width: 480px) {
-  .social-media .social-links li a img {
-    width: 30px;
-  }
+    .social-media .social-links li a img {
+        width: 30px;
+    }
 }
 
+/* Learn More Button */
 .learn-more-button {
     display: inline-block;
     text-decoration: none;
     margin-top: 10px;
-  }
-  
-  .learn-more-button img {
-    display: block;
-    width: auto; /* or set a specific width if required */
-    height: auto;
-  }
-
-  html body #learnMoreModal .modal-content p {
-    font-size: 15pt !important;
-  }
-
-  #learnMoreModal .modal-content p {
-    margin-bottom: 1em;
-  }
-html, body {
-    overflow-x: hidden;
 }
-  
+.learn-more-button img {
+    display: block;
+    width: auto;
+    height: auto;
+}
