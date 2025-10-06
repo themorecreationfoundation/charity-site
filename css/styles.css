@@ -470,3 +470,148 @@ h1, h2, h3, p {
     width: auto;
     height: auto;
 }
+/* Growth Mindset Free Book Section */
+.growth-mindset-section {
+    background: linear-gradient(135deg, #f4f7fb 0%, #eef4ff 100%);
+    padding: 60px 5%;
+    font-family: 'MADE TOMMY', sans-serif;
+    color: #0b2443;
+}
+
+.growth-mindset-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.growth-mindset-cover img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(11, 36, 67, 0.25);
+}
+
+.growth-mindset-details {
+    flex: 1;
+    min-width: 280px;
+    max-width: 540px;
+}
+
+.growth-mindset-details .eyebrow {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #e66a00;
+}
+
+.growth-mindset-details h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.growth-mindset-details .author {
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.growth-mindset-details .blurb {
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.growth-mindset-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.growth-mindset-form .field-group {
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.growth-mindset-form label {
+    font-weight: 600;
+}
+
+.growth-mindset-form input {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 36, 67, 0.2);
+    background-color: #fff;
+    color: #0b2443;
+    font-size: 1rem;
+}
+
+.growth-mindset-form input:focus {
+    outline: 2px solid #e66a00;
+    outline-offset: 2px;
+    border-color: transparent;
+}
+
+.receive-book-button {
+    align-self: flex-start;
+    background-color: #e66a00;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.receive-book-button:hover,
+.receive-book-button:focus {
+    background-color: #c45600;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.form-message {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.95rem;
+    min-height: 1.2em;
+}
+
+.form-message.error {
+    color: #b00020;
+}
+
+.form-message.success {
+    color: #0a7f4a;
+}
+
+@media (max-width: 768px) {
+    .growth-mindset-section {
+        padding: 50px 20px;
+    }
+
+    .growth-mindset-details h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .growth-mindset-form {
+        flex-direction: column;
+    }
+
+    .growth-mindset-form .field-group,
+    .receive-book-button {
+        width: 100%;
+    }
+
+    .receive-book-button {
+        text-align: center;
+    }
+}
