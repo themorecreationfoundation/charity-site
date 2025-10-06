@@ -479,7 +479,7 @@ h1, h2, h3, p {
 }
 /* Growth Mindset Free Book Section */
 .growth-mindset-section {
-    background: linear-gradient(135deg, #f4f7fb 0%, #eef4ff 100%);
+    background-color: #ffffff;
     padding: 60px 5%;
     font-family: 'MADE TOMMY', sans-serif;
     color: #0b2443;
@@ -493,6 +493,10 @@ h1, h2, h3, p {
     max-width: 1100px;
     margin: 0 auto;
     flex-wrap: wrap;
+    padding: 48px;
+    border-radius: 32px;
+    background: linear-gradient(135deg, #f4f7fb 0%, #eef4ff 100%);
+    box-shadow: 0 20px 45px rgba(11, 36, 67, 0.12);
 }
 
 .growth-mindset-cover picture {
@@ -608,12 +612,20 @@ h1, h2, h3, p {
         padding: 50px 20px;
     }
 
+    .growth-mindset-wrapper {
+        padding: 36px;
+    }
+
     .growth-mindset-details h2 {
         font-size: 1.7rem;
     }
 }
 
 @media (max-width: 540px) {
+    .growth-mindset-wrapper {
+        padding: 28px;
+    }
+
     .growth-mindset-form {
         flex-direction: column;
     }
@@ -626,4 +638,3 @@ h1, h2, h3, p {
     .receive-book-button {
         text-align: center;
     }
-}
