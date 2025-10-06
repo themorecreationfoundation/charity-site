@@ -488,11 +488,16 @@ h1, h2, h3, p {
     flex-wrap: wrap;
 }
 
+.growth-mindset-cover picture {
+    display: block;
+}
+
 .growth-mindset-cover img {
     width: 300px;
     max-width: 100%;
     border-radius: 16px;
     box-shadow: 0 20px 45px rgba(11, 36, 67, 0.25);
+    display: block;
 }
 
 .growth-mindset-details {
