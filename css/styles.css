@@ -416,6 +416,7 @@ h1, h2, h3, p {
 
 /* Social Media Section Styles */
 .social-media {
+    background-color: #fff;
     padding: 20px 0;
     text-align: center;
 }
