@@ -1,0 +1,16 @@
+{
+    "name": "charity-site",
+    "version": "1.0.0",
+    "description": "Static site with Growth Mindset lead capture backend",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.19.2",
+      "sqlite3": "^5.1.7"
+    }
+  }
