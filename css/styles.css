@@ -5,6 +5,7 @@ html, body {
     height: 100%;
     overflow-x: hidden;
     position: relative;
+    background-color: #ffffff;
 }
 
 /* Box-sizing */
@@ -194,7 +195,8 @@ h1, h2, h3, p {
 }
 
 .contact-and-support {
-    background-color: #fff;
+    background-color: #ffffff;
+    width: 100%;
 }
 
 /* Contact Us Form */
