@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b7dda"/>
+      <stop offset="50%" stop-color="#3ec4a7"/>
+      <stop offset="100%" stop-color="#f7d046"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="22" fill="url(#bg)"/>
+  <rect x="24" y="24" width="352" height="552" rx="18" fill="rgba(255,255,255,0.15)" stroke="url(#frame)" stroke-width="4"/>
+  <g transform="translate(50,120)" font-family="'Montserrat', 'Arial', sans-serif" fill="#ffffff" text-anchor="start">
+    <text font-size="48" font-weight="700" letter-spacing="6">GROWTH</text>
+    <text font-size="48" font-weight="700" letter-spacing="6" y="72">MINDSET</text>
+    <text font-size="22" font-weight="600" y="132">CREATING THE NEW YOU</text>
+  </g>
+  <g transform="translate(50,300)" font-family="'Montserrat', 'Arial', sans-serif" fill="#0b2443">
+    <text font-size="18" font-weight="600" opacity="0.85">In this empowering guide, Darren Lye shows readers</text>
+    <text font-size="18" font-weight="600" y="30" opacity="0.85">how to reframe challenges, celebrate progress, and</text>
+    <text font-size="18" font-weight="600" y="60" opacity="0.85">build daily habits that unlock a resilient, curious</text>
+    <text font-size="18" font-weight="600" y="90" opacity="0.85">outlook on life.</text>
+  </g>
+  <g transform="translate(50,500)" font-family="'Montserrat', 'Arial', sans-serif" fill="#ffffff">
+    <text font-size="22" font-weight="600" opacity="0.9">Darren Lye</text>
+  </g>
+</svg>
