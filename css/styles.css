@@ -504,6 +504,7 @@ h1, h2, h3, p {
     border-radius: 32px;
     background: linear-gradient(135deg, #f4f7fb 0%, #eef4ff 100%);
     box-shadow: 0 20px 45px rgba(11, 36, 67, 0.12);
+    overflow: hidden;
 }
 
 .growth-mindset-cover picture {
