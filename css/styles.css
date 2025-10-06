@@ -495,9 +495,27 @@ h1, h2, h3, p {
     flex-wrap: wrap;
     padding: 48px;
     border-radius: 32px;
-    background: linear-gradient(135deg, #f4f7fb 0%, #eef4ff 100%);
-    box-shadow: 0 20px 45px rgba(11, 36, 67, 0.12);
+    position: relative;
+    z-index: 0;
 }
+
+.growth-mindset-wrapper::before,
+.growth-mindset-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.growth-mindset-wrapper::before {
+    background: linear-gradient(135deg, #f4f7fb 0%, #eef4ff 100%);
+}
+
+.growth-mindset-wrapper::after {
+    box-shadow: 0 20px 45px rgba(11, 36, 67, 0.12);
+    z-index: -2;
 
 .growth-mindset-cover picture {
     display: block;
