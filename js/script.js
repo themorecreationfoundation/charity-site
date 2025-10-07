@@ -12,11 +12,13 @@ function initSlider(selector) {
     const slides = container.querySelectorAll('.slide');
     const prevBtn = container.querySelector('.prev-btn');
     const nextBtn = container.querySelector('.next-btn');
-    
+    const pausePlayBtn = container.querySelector('.pause-play-btn');
+
     if (!slider || slides.length === 0) return;
 
     let currentIndex = 0;
     const totalSlides = slides.length;
+    const autoPlayEnabled = totalSlides > 1;
 
     // Auto-play variables (currently not in use as autoplay is disabled)
     let isPlaying = false;
@@ -37,14 +39,28 @@ function initSlider(selector) {
     }
 
     // Auto-play functions (if needed, these can be enabled later)
+    function updatePausePlayButton() {
+        if (!pausePlayBtn) return;
+        const icon = isPlaying ? '&#10074;&#10074;' : '&#9658;';
+        const label = isPlaying ? 'Pause slider' : 'Play slider';
+        pausePlayBtn.innerHTML = icon;
+        pausePlayBtn.setAttribute('aria-label', label);
+        pausePlayBtn.setAttribute('aria-pressed', String(isPlaying));
+    }
+
     function startSlider() {
+        if (!autoPlayEnabled) return;
+        clearInterval(sliderInterval);
         sliderInterval = setInterval(showNextSlide, 4000);
         isPlaying = true;
+        updatePausePlayButton();
     }
 
     function stopSlider() {
         clearInterval(sliderInterval);
+        sliderInterval = null;
         isPlaying = false;
+        updatePausePlayButton();
     }
 
     function resetSliderInterval() {
@@ -69,6 +85,21 @@ function initSlider(selector) {
         });
     }
 
+    if (pausePlayBtn) {
+        pausePlayBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                stopSlider();
+            } else {
+                startSlider();
+            }
+        });
+    }
+
+    if (pausePlayBtn && !autoPlayEnabled) {
+        pausePlayBtn.hidden = true;
+        updatePausePlayButton();
+    }
+
     // Adjust on window resize
     window.addEventListener('resize', () => {
         showSlide(currentIndex);
@@ -76,8 +107,11 @@ function initSlider(selector) {
 
     // Only show the initial slide; do not start the interval.
     showSlide(currentIndex);
-    // Uncomment the following line if you wish to enable autoplay:
-    // startSlider();
+    if (autoPlayEnabled) {
+        startSlider();
+    } else {
+        updatePausePlayButton();
+    }
 }
 
 function initModals() {
