@@ -1,0 +1,308 @@
+:root {
+    --brand-navy: #0e3c7b;
+    --brand-blue: #1a7cc7;
+    --brand-teal: #0cc0df;
+    --brand-gold: #b8842b;
+    --text-color: #153047;
+    --background: linear-gradient(135deg, rgba(14, 60, 123, 0.97), rgba(12, 192, 223, 0.92));
+    --max-width: 960px;
+    font-size: 16px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #051425;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem 2rem;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .background-decoration {
+    position: fixed;
+    inset: 0;
+    background: var(--background);
+    opacity: 0.95;
+    z-index: -2;
+  }
+  
+  .background-decoration::before,
+  .background-decoration::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(0);
+    opacity: 0.25;
+    z-index: -1;
+  }
+  
+  .background-decoration::before {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(12, 192, 223, 0.9), rgba(12, 192, 223, 0));
+    top: -120px;
+    right: -160px;
+  }
+  
+  .background-decoration::after {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(184, 132, 43, 0.8), rgba(184, 132, 43, 0));
+    bottom: -140px;
+    left: -120px;
+  }
+  
+  .page {
+    width: 100%;
+    max-width: var(--max-width);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    box-shadow: 0 24px 60px rgba(0, 32, 63, 0.2);
+    backdrop-filter: blur(12px);
+  }
+  
+  .hero {
+    text-align: center;
+  }
+  
+  .hero__logo {
+    width: min(280px, 70vw);
+    height: auto;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+  
+  .hero__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    color: var(--brand-blue);
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+  
+  .hero__title {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--brand-navy);
+  }
+  
+  .hero__subtitle {
+    margin: 0 auto 2rem;
+    max-width: 640px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(21, 48, 71, 0.82);
+  }
+  
+  .hero__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  
+  .button--primary {
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-teal));
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(26, 124, 199, 0.35);
+  }
+  
+  .button--primary:hover,
+  .button--primary:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(26, 124, 199, 0.45);
+  }
+  
+  .button--ghost {
+    border: 2px solid rgba(14, 60, 123, 0.2);
+    color: var(--brand-navy);
+    background: rgba(255, 255, 255, 0.7);
+  }
+  
+  .button--ghost:hover,
+  .button--ghost:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+  }
+  
+  .info {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+  }
+  
+  .info h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    color: var(--brand-navy);
+    margin-bottom: 2rem;
+  }
+  
+  .info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .info__card {
+    background: rgba(14, 60, 123, 0.05);
+    border-radius: 18px;
+    padding: 1.75rem;
+    border: 1px solid rgba(14, 60, 123, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+  
+  .info__card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--brand-navy);
+    font-size: 1.2rem;
+  }
+  
+  .info__card p {
+    margin: 0 0 1rem;
+    color: rgba(21, 48, 71, 0.78);
+    line-height: 1.6;
+  }
+  
+  .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+  
+  .social-links a {
+    color: var(--brand-blue);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover,
+  .social-links a:focus-visible {
+    text-decoration: underline;
+  }
+  
+  .inline-link {
+    font-weight: 600;
+    color: var(--brand-blue);
+    text-decoration: none;
+  }
+  
+  .inline-link:hover,
+  .inline-link:focus-visible {
+    text-decoration: underline;
+  }
+  
+  .timeline {
+    margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  }
+  
+  .timeline h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    color: var(--brand-navy);
+    margin-bottom: 2rem;
+  }
+  
+  .timeline__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  
+  .timeline__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    padding: 1.5rem;
+    border: 1px solid rgba(14, 60, 123, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+  
+  .timeline__step {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-teal));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 24px rgba(12, 192, 223, 0.35);
+  }
+  
+  .timeline__item h3 {
+    margin: 0 0 0.4rem;
+    color: var(--brand-navy);
+    font-size: 1.15rem;
+  }
+  
+  .timeline__item p {
+    margin: 0;
+    color: rgba(21, 48, 71, 0.78);
+    line-height: 1.6;
+  }
+  
+  .footer {
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.78);
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      padding: 2rem 1.25rem 1.5rem;
+    }
+  
+    .page {
+      padding: 2rem 1.5rem;
+    }
+  
+    .timeline__item {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .timeline__step {
+      margin: 0 auto;
+    }
+  }
