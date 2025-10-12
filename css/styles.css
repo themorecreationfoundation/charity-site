@@ -199,6 +199,10 @@ a {
     margin-bottom: 0;
 }
 
+.content-card--book .content-card__text:last-of-type {
+    margin-bottom: 32px;
+}
+
 .content-card__cta-group {
     display: flex;
     flex-wrap: wrap;
