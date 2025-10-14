@@ -101,9 +101,9 @@ a {
 .content-card--vertical .content-card__body {
     margin-bottom: 8px;
     width: 100%;
-    max-width: min(100%, 820px);
+    max-width: min(100%, 880px);
     margin-left: 0;
-    margin-right: auto;
+    margin-right: 0;
     text-align: left;
     align-self: stretch;
 }
@@ -210,33 +210,74 @@ a {
     margin-top: 24px;
 }
 
-.content-card--form,
-.content-card--social {
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    height: 100%;
-}
-
-.content-card--social {
-    background: linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%);
-    color: var(--text-body);
-}
-
-.content-card--form .content-card__body,
-.content-card--social .content-card__body {
-    display: grid;
-    align-content: flex-start;
-    grid-template-rows: auto auto auto 1fr;
-    gap: 16px;
-    max-width: none;
-    width: 100%;
-}
-
-.content-card--form .content-card__body > *,
-.content-card--social .content-card__body > * {
-    margin: 0;
-}
+/* Support section */
+/* =================== Support section (two rows, images align with each row) =================== */
+.support-section .content-card{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(300px,520px); /* left text, right images */
+    grid-template-rows:auto auto;                            /* row 1: patron, row 2: fundraise */
+    column-gap:clamp(32px,6vw,56px);
+    row-gap:clamp(24px,3vw,32px);
+    align-items:start;
+  }
+  
+  /* LEFT column blocks (each occupies its own row) */
+  .support-section .content-card > .content-card__body{ grid-column:1; grid-row:1; max-width:640px; display:flex; flex-direction:column; gap:24px; }
+  .support-section .content-card > .support-fundraise{  grid-column:1; grid-row:2; max-width:640px; display:flex; flex-direction:column; gap:18px; }
+  
+  /* RIGHT column: make each figure a grid child so we can map them to rows */
+  .support-section .support-media{ display:contents; } /* flattens children into the grid */
+  .support-section .support-media__item:nth-child(1){ grid-column:2; grid-row:1; align-self:start; }
+  .support-section .support-media__item:nth-child(2){ grid-column:2; grid-row:2; align-self:start; }
+  
+  /* Image sizing: keep neat, no ballooning */
+  .support-section .support-media__item{
+    margin:0;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 20px 45px rgba(11,36,67,.18);
+    width:100%;
+    max-width:520px;                /* prevents oversizing on huge screens */
+    aspect-ratio:16 / 9;            /* consistent height so row 1 & 2 line up cleanly */
+  }
+  .support-section .support-media__item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  
+  /* Button parity (same size as Patreon) */
+  .support-section .pill-button{ min-width:220px; padding:14px 32px; }
+  .support-section .support-fundraise__buttons{ display:flex; flex-wrap:wrap; gap:16px; }
+  .support-section .support-fundraise__buttons .pill-button{ flex:0 0 auto; min-width:220px; padding:14px 32px; }
+  
+  /* Mobile: stack in reading order */
+  @media (max-width:900px){
+    .support-section .content-card{
+      grid-template-columns:1fr;
+      grid-template-rows:auto auto auto auto;
+    }
+    .support-section .content-card > .content-card__body{ grid-row:1; }
+    .support-section .support-media__item:nth-child(1){ grid-column:1; grid-row:2; max-width:none; }
+    .support-section .content-card > .support-fundraise{ grid-row:3; }
+    .support-section .support-media__item:nth-child(2){ grid-column:1; grid-row:4; max-width:none; }
+    .support-section .support-fundraise__buttons .pill-button{ width:100%; min-width:0; }
+  }
+  /* Lower the two Support images to align with the H2 headings (desktop only) */
+@media (min-width: 901px) {
+    /* Image beside “Become a patron” */
+    .support-section .support-media__item:nth-child(1) {
+        /* Increase the offset — adjust if you need even more/less */
+        margin-top: clamp(72px, 10vw, 100px) !important;
+      }
+  
+    /* Image beside “Help Us Fundraise” */
+    .support-section .support-media__item:nth-child(2) {
+      margin-top: clamp(12px, 2vw, 40px) !important;
+    }
+  }
+  
 
 /* Buttons */
 .pill-button {
@@ -737,7 +778,7 @@ body.no-scroll {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .navbar .container {
         padding: 12px 0;
     }
@@ -759,8 +800,16 @@ body.no-scroll {
         gap: 32px;
     }
 
+    .content-card--vertical .content-card__body {
+        max-width: 100%;
+    }
+
     .content-card__title {
         font-size: 1.8rem;
+    }
+
+    .content-card__media {
+        max-width: none;
     }
 
     .pill-button {
@@ -772,12 +821,23 @@ body.no-scroll {
         width: 100%;
     }
 
-    .content-card__media {
-        max-width: none;
+    .support-section .content-card {
+        grid-template-columns: 1fr;
     }
 
-    .social-links__button {
-        justify-content: flex-start;
+    .support-section .support-media {
+        justify-self: stretch;
+        max-width: none;
+        align-items: stretch;
+    }
+
+    .support-section .support-fundraise__buttons {
+        flex-direction: column;
+    }
+
+    .support-section .support-fundraise__buttons .pill-button {
+        width: 100%;
+        min-width: 0;
     }
 }
 
