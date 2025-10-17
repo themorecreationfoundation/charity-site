@@ -219,19 +219,19 @@ a {
     column-gap:clamp(32px,6vw,56px);
     row-gap:clamp(24px,3vw,32px);
     align-items:start;
-  }
+}
   
-  /* LEFT column blocks (each occupies its own row) */
-  .support-section .content-card > .content-card__body{ grid-column:1; grid-row:1; max-width:640px; display:flex; flex-direction:column; gap:24px; }
-  .support-section .content-card > .support-fundraise{  grid-column:1; grid-row:2; max-width:640px; display:flex; flex-direction:column; gap:18px; }
+/* LEFT column blocks (each occupies its own row) */
+.support-section .content-card > .content-card__body{ grid-column:1; grid-row:1; max-width:640px; display:flex; flex-direction:column; gap:24px; }
+.support-section .content-card > .support-fundraise{  grid-column:1; grid-row:2; max-width:640px; display:flex; flex-direction:column; gap:18px; }
   
-  /* RIGHT column: make each figure a grid child so we can map them to rows */
-  .support-section .support-media{ display:contents; } /* flattens children into the grid */
-  .support-section .support-media__item:nth-child(1){ grid-column:2; grid-row:1; align-self:start; }
-  .support-section .support-media__item:nth-child(2){ grid-column:2; grid-row:2; align-self:start; }
+/* RIGHT column: make each figure a grid child so we can map them to rows */
+.support-section .support-media{ display:contents; } /* flattens children into the grid */
+.support-section .support-media__item:nth-child(1){ grid-column:2; grid-row:1; align-self:start; }
+.support-section .support-media__item:nth-child(2){ grid-column:2; grid-row:2; align-self:start; }
   
-  /* Image sizing: keep neat, no ballooning */
-  .support-section .support-media__item{
+/* Image sizing: keep neat, no ballooning */
+.support-section .support-media__item{
     margin:0;
     border-radius:16px;
     overflow:hidden;
@@ -239,21 +239,21 @@ a {
     width:100%;
     max-width:520px;                /* prevents oversizing on huge screens */
     aspect-ratio:16 / 9;            /* consistent height so row 1 & 2 line up cleanly */
-  }
-  .support-section .support-media__item img{
+}
+.support-section .support-media__item img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
-  }
+}
   
-  /* Button parity (same size as Patreon) */
-  .support-section .pill-button{ min-width:220px; padding:14px 32px; }
-  .support-section .support-fundraise__buttons{ display:flex; flex-wrap:wrap; gap:16px; }
-  .support-section .support-fundraise__buttons .pill-button{ flex:0 0 auto; min-width:220px; padding:14px 32px; }
+/* Button parity (same size as Patreon) */
+.support-section .pill-button{ min-width:220px; padding:14px 32px; }
+.support-section .support-fundraise__buttons{ display:flex; flex-wrap:wrap; gap:16px; }
+.support-section .support-fundraise__buttons .pill-button{ flex:0 0 auto; min-width:220px; padding:14px 32px; }
   
-  /* Mobile: stack in reading order */
-  @media (max-width:900px){
+/* Mobile: stack in reading order */
+@media (max-width:900px){
     .support-section .content-card{
       grid-template-columns:1fr;
       grid-template-rows:auto auto auto auto;
@@ -263,21 +263,19 @@ a {
     .support-section .content-card > .support-fundraise{ grid-row:3; }
     .support-section .support-media__item:nth-child(2){ grid-column:1; grid-row:4; max-width:none; }
     .support-section .support-fundraise__buttons .pill-button{ width:100%; min-width:0; }
-  }
-  /* Lower the two Support images to align with the H2 headings (desktop only) */
+}
+/* Lower the two Support images to align with the H2 headings (desktop only) */
 @media (min-width: 901px) {
     /* Image beside “Become a patron” */
     .support-section .support-media__item:nth-child(1) {
-        /* Increase the offset — adjust if you need even more/less */
         margin-top: clamp(72px, 10vw, 100px) !important;
-      }
+    }
   
     /* Image beside “Help Us Fundraise” */
     .support-section .support-media__item:nth-child(2) {
-      margin-top: clamp(12px, 2vw, 40px) !important;
+        margin-top: clamp(12px, 2vw, 40px) !important;
     }
-  }
-  
+}
 
 /* Buttons */
 .pill-button {
@@ -580,10 +578,6 @@ a {
     outline: none;
 }
 
-.slider-lightbox__close:focus-visible {
-    box-shadow: 0 0 0 4px rgba(230, 106, 0, 0.35);
-}
-
 body.no-scroll {
     overflow: hidden;
 }
@@ -688,6 +682,38 @@ body.no-scroll {
     transform: translateY(-2px);
 }
 
+/* ===== Alignment overrides: make social card copy align with contact card copy ===== */
+/* ===== Contact & Social: force same top alignment ===== */
+.content-section.contact-and-support .content-grid {
+    align-items: start; /* top-align the two cards in the grid */
+  }
+  
+  /* Top-align contents inside each card */
+  .content-section.contact-and-support .content-card {
+    align-items: flex-start; /* override the global 'center' for this section only */
+  }
+  
+  /* Kill default top margins on headings/eyebrows within this section */
+  .content-section.contact-and-support .content-card__eyebrow,
+  .content-section.contact-and-support .content-card__title,
+  .content-section.contact-and-support .content-card__text {
+    margin-top: 0;
+  }
+  
+  /* Ensure the first element in the card body can’t push the block down */
+  .content-section.contact-and-support .content-card__body {
+    padding-top: 0;
+  }
+  .content-section.contact-and-support .content-card__body > :first-child {
+    margin-top: 0 !important;
+  }
+  
+  /* Remove any extra bump above the social list */
+  .content-section.contact-and-support .social-links {
+    margin-top: 0;
+  }
+  
+  
 /* Footer */
 .site-footer {
     background-color: #ffffff;
@@ -868,3 +894,15 @@ body.no-scroll {
         height: 50px;
     }
 }
+/* Contact & Social: increase gap above the social buttons */
+.content-section.contact-and-support .content-card--social .social-links {
+    margin-top: 16px; /* mobile-friendly default */
+  }
+  
+  @media (min-width: 900px) {
+    .content-section.contact-and-support .content-card--social .social-links {
+      /* nudge this value to fine-tune alignment with the "Your Name" field */
+      margin-top: clamp(40px, 5vw, 60px);
+    }
+  }
+  
