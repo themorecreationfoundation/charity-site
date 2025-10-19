@@ -163,7 +163,12 @@
       <p class="content-card__text">Our current Author Ambassador, Darren Lye, shares practical exercises and inspiring stories that help every reader cultivate a mindset that grows with them—sharpening attention, embracing feedback, and developing habits that compound to shape a life full of confidence, contribution, and value creation for others as we enter the new AI age.</p>
 
       <div class="content-card__cta-group">
-        <a class="pill-button" href="https://dl.bookfunnel.com/hp2x1pfp1p" target="_blank" rel="noopener noreferrer">Claim Book</a>
+        <a id="claimBookLink"
+   class="pill-button"
+   href="https://dl.bookfunnel.com/hp2x1pfp1p"
+   target="_blank"
+   rel="noopener noreferrer">Claim Book</a>
+
         <a class="pill-button" href="https://www.amazon.co.uk/review/create-review/?ie=UTF8&channel=glance-detail&asin=B0FTZFBBMW" target="_blank" rel="noopener noreferrer">Leave a Review</a>
       </div>
     </div>
@@ -360,6 +365,26 @@
     </div>
   </div>
 
+  <!-- Claim Book Modal -->
+<div id="claimBookModal" class="modal" role="dialog" aria-modal="true"
+aria-labelledby="claimBookHeading" aria-describedby="claimBookDesc">
+<div class="modal-content">
+<button class="close-btn" type="button" data-close="claimBookModal" aria-label="Close">&times;</button>
+<h2 id="claimBookHeading">Claim your free book</h2>
+<p id="claimBookDesc">
+ You’ll be taken to BookFunnel to download your copy of <em>Growth Mindset: Creating the New You</em>.
+</p>
+<div class="content-card__cta-group">
+ <a class="pill-button"
+    href="https://dl.bookfunnel.com/hp2x1pfp1p"
+    target="_blank"
+    rel="noopener noreferrer">Continue to BookFunnel</a>
+ <button class="pill-button pill-button--ghost" type="button" data-close="claimBookModal">Cancel</button>
+</div>
+</div>
+</div>
+
+
   <script>
     (function () {
       const form   = document.getElementById('contact-form');
@@ -407,5 +432,44 @@
       });
     })();
   </script>
+
+<script>
+  (function () {
+    const link  = document.getElementById('claimBookLink');
+    const modal = document.getElementById('claimBookModal');
+
+    if (!link || !modal) return;
+
+    const closeButtons = modal.querySelectorAll('[data-close="claimBookModal"]');
+
+    function openModal() {
+      modal.style.display = 'block';
+      document.body.classList.add('no-scroll');
+      // focus the first CTA
+      const firstBtn = modal.querySelector('.pill-button') || modal;
+      firstBtn && firstBtn.focus && firstBtn.focus();
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.classList.remove('no-scroll');
+      link && link.focus && link.focus();
+    }
+
+    // Open modal instead of navigating right away
+    link.addEventListener('click', function (e) {
+      e.preventDefault();  // keep user on the page
+      openModal();
+    });
+
+    // Close handlers
+    closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+    });
+  })();
+</script>
+
 </body>
 </html>
