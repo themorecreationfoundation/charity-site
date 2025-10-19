@@ -53,30 +53,6 @@ GitHub Pages: For hosting (if applicable).
 
 Git: For version control.
 
----
-
-## Installation
-### Clone the Repository
-1. Copy the repository URL:
-   ```bash
-   git clone https://github.com/themorecreationfoundation/charity-site.git
-
-   Local development
-
-Clone the repo
-
-git clone https://github.com/themorecreationfoundation/charity-site.git
-cd charity-site
-
-
-Run a local server (pick one):
-
-# Python
-python3 -m http.server 8080
-# or Node
-npx http-server -p 8080
-# or VS Code: “Open with Live Server”
-
 
 ## Editing Content
 - **About film / Mission / Activities / Outcome**  
