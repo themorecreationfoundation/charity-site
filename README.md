@@ -78,74 +78,45 @@ npx http-server -p 8080
 # or VS Code: “Open with Live Server”
 
 
-Open http://localhost:8080 in your browser.
+## Editing Content
+- **About film / Mission / Activities / Outcome**  
+  Edit copy in `index.html` within the relevant content cards/sections.
+- **Sponsorship slider**  
+  Update slide images and captions in the slider markup in `index.html` and replace assets in `/assets`.
+- **Other Support (Patreon / Fundraise buttons)**  
+  Update the links in the “Other Support” card in `index.html`.
+- **FREE Book Giveaway**  
+  Update the title/author text and the BookFunnel link in `index.html`.
+- **Contact form**  
+  Ensure the `action` points to `https://formsubmit.co/<your_email>`. The JS keeps users on-page and shows a thank-you modal.
+- **Policies**  
+  Terms & Privacy copy live in modal blocks at the end of `index.html`.
 
-Note: FormSubmit will not work over file://. Use a local server (as above) or a deployed URL for testing submissions. On first successful send, verify the recipient email via FormSubmit’s activation email. 
-morecreation.foundation
+## Deployment
+Any static host works (e.g. Netlify, Vercel, GitHub Pages, Cloudflare Pages, or your own server).
 
-Project structure (typical)
-/assets/          # images, icons, media
-/css/             # stylesheets
-/js/              # sliders, modal + form handlers
-index.html        # main page
-README.md
+**Post-deploy checks**
+- Contact form sends and shows the on-page thank-you modal.
+- Slider navigation works; images load correctly.
+- External links open as expected (Patreon, BookFunnel, PayPal, JustGiving, GoFundMe).
 
+## Contributing
+Pull requests are welcome. Please:
+- Use **British English**.
+- Keep copy aligned with the mission: literacy + value creation for the AI age.
+- For visual changes, attach a screenshot or short GIF.
 
-(Folder names may vary—adjust to your repo.)
+## Licence
+**All rights reserved © The More Creation Foundation.**  
+Some content (text, images, video) may be protected by copyright. Request permission before reuse.
 
-Content updates (where to edit)
+## Legal
+Registered Charity in England & Wales: **1210489**  
+(See the Charity Commission record for details.)
 
-About film / Mission / Activities / Outcome — In index.html within the relevant content cards/sections. 
-morecreation.foundation
+## Quick Link
+Website: **https://morecreation.foundation/**
 
-Sponsorship slider — Update slide images and captions in the slider markup (and /assets). 
-morecreation.foundation
-
-Patreon / Fundraise buttons — Update links in the “Other Support” card. 
-morecreation.foundation
-
-FREE Book Giveaway — Update title/author and the BookFunnel link. 
-morecreation.foundation
-
-Contact form — Ensure the action points to https://formsubmit.co/<your_email>; the script opens a thank-you modal instead of navigating away. 
-morecreation.foundation
-
-Policies — Terms & Privacy copy live in modal content blocks in index.html. 
-morecreation.foundation
-
-Deployment
-
-Any static host works: Netlify, Vercel, GitHub Pages, Cloudflare Pages, or your own server.
-
-After deploying, test:
-
-Contact form send + modal confirmation.
-
-Slider navigation and image loading.
-
-External links (Patreon, BookFunnel, PayPal, JustGiving, GoFundMe). 
-morecreation.foundation
-
-Contributing
-
-Pull requests are welcome. Please keep copy in British English and align content with the mission: literacy + value creation for the AI age. For visual changes, attach a screenshot or short Loom/GIF.
-
-Licence
-
-All rights reserved © The More Creation Foundation.
-Content (text, images, video) may be protected by copyright; please request permission before reuse.
-
-Legal
-
-Registered Charity in England & Wales: 1210489 (see Charity Commission record). 
-morecreation.foundation
-
-See the site’s Terms and Privacy Policy for usage and data handling details. 
-morecreation.foundation
-
-Quick links
-
-Website: morecreation.foundation 
 morecreation.foundation
 
 Patreon / PayPal / JustGiving / GoFundMe / BookFunnel / YouTube — linked from the live site’s “Other Support”, “About film”, and “Free Book Giveaway” sections. 
