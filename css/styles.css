@@ -181,6 +181,7 @@ a {
 .content-card__title {
     font-size: 2.25rem;
     line-height: 1.2;
+    margin-top: 0;         /* ensure headings never add unexpected top space */
     margin-bottom: 16px;
 }
 
@@ -210,72 +211,112 @@ a {
     margin-top: 24px;
 }
 
-/* Support section */
 /* =================== Support section (two rows, images align with each row) =================== */
-.support-section .content-card{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(300px,520px); /* left text, right images */
-    grid-template-rows:auto auto;                            /* row 1: patron, row 2: fundraise */
-    column-gap:clamp(32px,6vw,56px);
-    row-gap:clamp(24px,3vw,32px);
-    align-items:start;
+.support-section .content-card {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(300px,520px); /* left text, right images */
+    grid-template-rows: auto auto;                             /* row 1: patron, row 2: fundraise */
+    column-gap: clamp(32px,6vw,56px);
+    row-gap: clamp(24px,3vw,32px);
+    align-items: start;
 }
-  
-/* LEFT column blocks (each occupies its own row) */
-.support-section .content-card > .content-card__body{ grid-column:1; grid-row:1; max-width:640px; display:flex; flex-direction:column; gap:24px; }
-.support-section .content-card > .support-fundraise{  grid-column:1; grid-row:2; max-width:640px; display:flex; flex-direction:column; gap:18px; }
-  
+
+/* LEFT column blocks (each occupies its own row)
+   Use margins (like Mission section) instead of flex gap so spacing matches exactly */
+.support-section .content-card > .content-card__body {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;  /* 🔧 remove inter-element gap; use the same margins as Mission */
+}
+.support-section .content-card > .support-fundraise {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;  /* 🔧 match Mission spacing by relying on margins */
+}
+
+/* 🔧 Ensure Support section uses the same margin rhythm as Mission */
+.support-section .content-card__eyebrow { margin-bottom: 12px; }
+.support-section .content-card__title   { margin-top: 0; margin-bottom: 16px; }
+.support-section .content-card__text    { margin-top: 0; margin-bottom: 16px; }
+.support-section .content-card__text:last-of-type { margin-bottom: 0; }
+
 /* RIGHT column: make each figure a grid child so we can map them to rows */
-.support-section .support-media{ display:contents; } /* flattens children into the grid */
-.support-section .support-media__item:nth-child(1){ grid-column:2; grid-row:1; align-self:start; }
-.support-section .support-media__item:nth-child(2){ grid-column:2; grid-row:2; align-self:start; }
-  
+.support-section .support-media { display: contents; } /* flattens children into the grid */
+.support-section .support-media__item:nth-child(1) { grid-column: 2; grid-row: 1; align-self: start; }
+.support-section .support-media__item:nth-child(2) { grid-column: 2; grid-row: 2; align-self: start; }
+
 /* Image sizing: keep neat, no ballooning */
-.support-section .support-media__item{
-    margin:0;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 20px 45px rgba(11,36,67,.18);
-    width:100%;
-    max-width:520px;                /* prevents oversizing on huge screens */
-    aspect-ratio:16 / 9;            /* consistent height so row 1 & 2 line up cleanly */
+.support-section .support-media__item {
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(11,36,67,.18);
+    width: 100%;
+    max-width: 520px;                /* prevents oversizing on huge screens */
+    aspect-ratio: 16 / 9;            /* consistent height so row 1 & 2 line up cleanly */
 }
-.support-section .support-media__item img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+.support-section .support-media__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
+
+/* --- Support Section: align images with their H2s, and match CTA spacing --- */
+
+/* Buttons under “Help us Fundraise” — same spacing as Patreon CTA */
+.support-section .support-fundraise__buttons{
+    margin-top: 24px;   /* matches .content-card__cta-group */
+    gap: 16px;
+  }
+  
+  /* Desktop-only image offsets so tops line up with the H2s */
+  @media (min-width: 901px){
+    /* Image beside “Become a Patron” */
+    .support-section .support-media__item:nth-child(1){
+      margin-top: 84px !important;  /* align with Become a Patron H2 */
+    }
+    /* Image beside “Help us Fundraise” */
+    .support-section .support-media__item:nth-child(2){
+      margin-top: 24px !important;  /* align with Help us Fundraise H2 */
+    }
+  }
+  /* place this AFTER any previous .support-media__item margin rules */
+@media (min-width: 901px){
+    .support-section .content-card .support-media__item:nth-child(1){
+      margin-top: 54px !important;   /* aligns with “Become a Patron” */
+    }
+    .support-section .content-card .support-media__item:nth-child(2){
+      margin-top: 10px !important;   /* aligns with “Help us Fundraise” */
+    }
+  }
+  
   
 /* Button parity (same size as Patreon) */
-.support-section .pill-button{ min-width:220px; padding:14px 32px; }
-.support-section .support-fundraise__buttons{ display:flex; flex-wrap:wrap; gap:16px; }
-.support-section .support-fundraise__buttons .pill-button{ flex:0 0 auto; min-width:220px; padding:14px 32px; }
-  
+.support-section .pill-button { min-width: 220px; padding: 14px 32px; }
+.support-section .support-fundraise__buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+.support-section .support-fundraise__buttons .pill-button { flex: 0 0 auto; min-width: 220px; padding: 14px 32px; }
+
 /* Mobile: stack in reading order */
-@media (max-width:900px){
-    .support-section .content-card{
-      grid-template-columns:1fr;
-      grid-template-rows:auto auto auto auto;
+@media (max-width: 900px) {
+    .support-section .content-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
     }
-    .support-section .content-card > .content-card__body{ grid-row:1; }
-    .support-section .support-media__item:nth-child(1){ grid-column:1; grid-row:2; max-width:none; }
-    .support-section .content-card > .support-fundraise{ grid-row:3; }
-    .support-section .support-media__item:nth-child(2){ grid-column:1; grid-row:4; max-width:none; }
-    .support-section .support-fundraise__buttons .pill-button{ width:100%; min-width:0; }
+    .support-section .content-card > .content-card__body { grid-row: 1; }
+    .support-section .support-media__item:nth-child(1) { grid-column: 1; grid-row: 2; max-width: none; }
+    .support-section .content-card > .support-fundraise { grid-row: 3; }
+    .support-section .support-media__item:nth-child(2) { grid-column: 1; grid-row: 4; max-width: none; }
+    .support-section .support-fundraise__buttons .pill-button { width: 100%; min-width: 0; }
 }
-/* Lower the two Support images to align with the H2 headings (desktop only) */
-@media (min-width: 901px) {
-    /* Image beside “Become a patron” */
-    .support-section .support-media__item:nth-child(1) {
-        margin-top: clamp(72px, 10vw, 100px) !important;
-    }
-  
-    /* Image beside “Help Us Fundraise” */
-    .support-section .support-media__item:nth-child(2) {
-        margin-top: clamp(12px, 2vw, 40px) !important;
-    }
-}
+
+
 
 /* Buttons */
 .pill-button {
@@ -400,13 +441,8 @@ a {
     background-color: rgba(11, 36, 67, 0.85);
 }
 
-.prev-btn {
-    left: 16px;
-}
-
-.next-btn {
-    right: 16px;
-}
+.prev-btn { left: 16px; }
+.next-btn { right: 16px; }
 
 .pause-play-btn {
     bottom: 16px;
@@ -417,6 +453,7 @@ a {
     height: 56px;
 }
 
+/* Slider lightbox */
 .slider-lightbox {
     position: fixed;
     inset: 0;
@@ -428,9 +465,7 @@ a {
     z-index: 4000;
 }
 
-.slider-lightbox.is-visible {
-    display: flex;
-}
+.slider-lightbox.is-visible { display: flex; }
 
 .slider-lightbox__content {
     position: relative;
@@ -456,9 +491,7 @@ a {
     cursor: grab;
 }
 
-.slider-viewport:active {
-    cursor: grabbing;
-}
+.slider-viewport:active { cursor: grabbing; }
 
 .slider-zoom-content {
     width: 100%;
@@ -475,13 +508,8 @@ a {
     background-color: #000000;
 }
 
-.slider-lightbox .image-slider {
-    height: 100%;
-}
-
-.slider-lightbox .slider {
-    height: 100%;
-}
+.slider-lightbox .image-slider { height: 100%; }
+.slider-lightbox .slider { height: 100%; }
 
 .slider-lightbox .slide {
     height: 100%;
@@ -518,9 +546,7 @@ a {
     background-color: rgba(0, 0, 0, 0.85);
 }
 
-.slider-lightbox .slider-expand-btn {
-    display: none;
-}
+.slider-lightbox .slider-expand-btn { display: none; }
 
 .slider-lightbox__reset {
     position: absolute;
@@ -578,9 +604,7 @@ a {
     outline: none;
 }
 
-body.no-scroll {
-    overflow: hidden;
-}
+body.no-scroll { overflow: hidden; }
 
 /* Contact and social */
 .content-grid {
@@ -597,9 +621,7 @@ body.no-scroll {
     }
 }
 
-.content-grid .content-card {
-    height: 100%;
-}
+.content-grid .content-card { height: 100%; }
 
 .contact-form {
     display: flex;
@@ -653,9 +675,7 @@ body.no-scroll {
     gap: 16px;
 }
 
-.social-links li {
-    margin: 0;
-}
+.social-links li { margin: 0; }
 
 .social-links__button {
     display: flex;
@@ -682,38 +702,22 @@ body.no-scroll {
     transform: translateY(-2px);
 }
 
-/* ===== Alignment overrides: make social card copy align with contact card copy ===== */
-/* ===== Contact & Social: force same top alignment ===== */
+/* ===== Contact & Social: force same top alignment (kept) ===== */
 .content-section.contact-and-support .content-grid {
     align-items: start; /* top-align the two cards in the grid */
-  }
-  
-  /* Top-align contents inside each card */
-  .content-section.contact-and-support .content-card {
+}
+.content-section.contact-and-support .content-card {
     align-items: flex-start; /* override the global 'center' for this section only */
-  }
-  
-  /* Kill default top margins on headings/eyebrows within this section */
-  .content-section.contact-and-support .content-card__eyebrow,
-  .content-section.contact-and-support .content-card__title,
-  .content-section.contact-and-support .content-card__text {
+}
+.content-section.contact-and-support .content-card__eyebrow,
+.content-section.contact-and-support .content-card__title,
+.content-section.contact-and-support .content-card__text {
     margin-top: 0;
-  }
-  
-  /* Ensure the first element in the card body can’t push the block down */
-  .content-section.contact-and-support .content-card__body {
-    padding-top: 0;
-  }
-  .content-section.contact-and-support .content-card__body > :first-child {
-    margin-top: 0 !important;
-  }
-  
-  /* Remove any extra bump above the social list */
-  .content-section.contact-and-support .social-links {
-    margin-top: 0;
-  }
-  
-  
+}
+.content-section.contact-and-support .content-card__body { padding-top: 0; }
+.content-section.contact-and-support .content-card__body > :first-child { margin-top: 0 !important; }
+.content-section.contact-and-support .social-links { margin-top: 0; }
+
 /* Footer */
 .site-footer {
     background-color: #ffffff;
@@ -795,114 +799,45 @@ body.no-scroll {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-    .logo img {
-        max-width: 260px;
-    }
-
-    .pill-button {
-        padding: 12px 26px;
-    }
+    .logo img { max-width: 260px; }
+    .pill-button { padding: 12px 26px; }
 }
 
 @media (max-width: 900px) {
-    .navbar .container {
-        padding: 12px 0;
-    }
+    .navbar .container { padding: 12px 0; }
+    .logo img { max-width: 200px; }
+    .paypal-button-image { max-width: 160px; }
 
-    .logo img {
-        max-width: 200px;
-    }
+    .content-section { padding: 48px 5%; }
+    .content-card { padding: 36px; gap: 32px; }
+    .content-card--vertical .content-card__body { max-width: 100%; }
+    .content-card__title { font-size: 1.8rem; }
+    .content-card__media { max-width: none; }
 
-    .paypal-button-image {
-        max-width: 160px;
-    }
+    .pill-button { width: 100%; justify-content: center; }
+    .content-card__cta-group { width: 100%; }
 
-    .content-section {
-        padding: 48px 5%;
-    }
+    .support-section .content-card { grid-template-columns: 1fr; }
 
-    .content-card {
-        padding: 36px;
-        gap: 32px;
-    }
+    .support-section .support-media { justify-self: stretch; max-width: none; align-items: stretch; }
 
-    .content-card--vertical .content-card__body {
-        max-width: 100%;
-    }
-
-    .content-card__title {
-        font-size: 1.8rem;
-    }
-
-    .content-card__media {
-        max-width: none;
-    }
-
-    .pill-button {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .content-card__cta-group {
-        width: 100%;
-    }
-
-    .support-section .content-card {
-        grid-template-columns: 1fr;
-    }
-
-    .support-section .support-media {
-        justify-self: stretch;
-        max-width: none;
-        align-items: stretch;
-    }
-
-    .support-section .support-fundraise__buttons {
-        flex-direction: column;
-    }
-
-    .support-section .support-fundraise__buttons .pill-button {
-        width: 100%;
-        min-width: 0;
-    }
+    .support-section .support-fundraise__buttons { flex-direction: column; }
+    .support-section .support-fundraise__buttons .pill-button { width: 100%; min-width: 0; }
 }
 
 @media (max-width: 540px) {
-    .content-card {
-        padding: 28px;
-    }
+    .content-card { padding: 28px; }
+    .content-card__title { font-size: 1.6rem; }
+    .content-card__eyebrow { font-size: 0.75rem; }
+    .pill-button { padding: 12px 20px; }
+    .control-btn { width: 44px; height: 44px; }
+    .pause-play-btn { width: 50px; height: 50px; }
+}
 
-    .content-card__title {
-        font-size: 1.6rem;
-    }
-
-    .content-card__eyebrow {
-        font-size: 0.75rem;
-    }
-
-    .pill-button {
-        padding: 12px 20px;
-    }
-
-    .control-btn {
-        width: 44px;
-        height: 44px;
-    }
-
-    .pause-play-btn {
-        width: 50px;
-        height: 50px;
+/* Contact & Social: increase gap above the social buttons (kept) */
+.content-section.contact-and-support .content-card--social .social-links { margin-top: 16px; }
+@media (min-width: 900px) {
+    .content-section.contact-and-support .content-card--social .social-links {
+        margin-top: clamp(40px, 5vw, 20px);
     }
 }
-/* Contact & Social: increase gap above the social buttons */
-.content-section.contact-and-support .content-card--social .social-links {
-    margin-top: 16px; /* mobile-friendly default */
-  }
-  
-  @media (min-width: 900px) {
-    .content-section.contact-and-support .content-card--social .social-links {
-      /* nudge this value to fine-tune alignment with the "Your Name" field */
-      margin-top: clamp(40px, 5vw, 60px);
-    }
-  }
-  
